@@ -1,0 +1,12 @@
+{
+  "name": "app",
+  "short_name": "app",
+  "scope": "/",
+  "start_url": "./",
+  "orientation": "portrait",
+  "description": "app",
+  "icons": [],
+  "theme_color": "#424242",
+  "background_color": "#424242",
+  "display": "standalone"
+}

@@ -1,0 +1,1 @@
+export { RedirectMainPage } from './RedirectMainPage';
