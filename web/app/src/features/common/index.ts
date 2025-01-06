@@ -1,7 +1,7 @@
 export {
   commonSlice,
-  setDates,
+  setUser,
 } from './commonSlice';
 export {
-  selectTestObject,
+  selectUser,
 } from './selectors';

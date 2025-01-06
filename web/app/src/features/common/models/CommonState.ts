@@ -1,4 +1,5 @@
+import { Models } from "appwrite";
+
 export interface CommonState {
-  startDate?: string;
-  endDate?: string;
+  user: Models.User<Models.Preferences> | null;
 }

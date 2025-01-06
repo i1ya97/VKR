@@ -1,8 +1,8 @@
 import { Client } from 'appwrite';
 
-const endPoint = `https://webapp.nntc.pro/v1`;
+const endPoint = `https://localhost/v1`;
 
-const projectId = '66b5d683000e268430a3';
+const projectId = '6777b84800366212389d';
 
 const newClient = new Client();
 newClient.setEndpoint(endPoint).setProject(projectId);

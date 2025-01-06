@@ -1,3 +1,3 @@
-const commonDataModule = (state: RootState) => state.commonData;
+const commonModule = (state: RootState) => state.common;
 
-export const selectTestObject = (state: RootState) => commonDataModule(state).testObject;
+export const selectUser = (state: RootState) => commonModule(state).user;

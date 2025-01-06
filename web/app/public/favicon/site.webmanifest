@@ -1,10 +1,10 @@
 {
-  "name": "app",
-  "short_name": "app",
+  "name": "web-app",
+  "short_name": "web-app",
   "scope": "/",
   "start_url": "./",
   "orientation": "portrait",
-  "description": "app",
+  "description": "web-app",
   "icons": [],
   "theme_color": "#424242",
   "background_color": "#424242",

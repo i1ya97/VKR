@@ -3,14 +3,11 @@ import utc from 'dayjs/plugin/utc';
 import 'dayjs/locale/ru';
 import { memo } from 'react';
 import { Provider } from 'react-redux';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
-import { MainPage } from '@pages/MainPage';
-import { NotFound } from '@pages/NotFound';
-import { RedirectMainPage } from '@pages/RedirectMainPage';
-import { AuthProvider } from '@shared/providers';
+import { BrowserRouter } from 'react-router-dom';
 
 import { store } from './store/store';
+import { RouteProvider, ThemeProvider } from '@shared/providers';
+import CssBaseline from '@mui/material/CssBaseline';
 
 function App() {
   dayjs.locale('ru');
@@ -18,17 +15,12 @@ function App() {
 
   return (
     <BrowserRouter>
-      <AuthProvider>
+      <ThemeProvider >
+        <CssBaseline />
         <Provider store={store}>
-          <Routes>
-            <Route path="/:boreId">
-              <Route index element={<RedirectMainPage />} />
-              <Route path="/:boreId/:tab" element={<MainPage />} />
-            </Route>
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <RouteProvider />
         </Provider>
-      </AuthProvider>
+      </ThemeProvider>
     </BrowserRouter>
   );
 }

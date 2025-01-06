@@ -10,8 +10,7 @@
     "lint:all": "eslint \"./**/*.{ts,tsx,mjs}\"",
     "lint:styles:fix": "stylelint \"**/*.css\" --fix",
     "start": "cross-env NODE_ENV=development webpack serve --stats-error-details",
-    "build": "cross-env NODE_ENV=production webpack --stats-error-details",
-    "generate-gql": "graphql-codegen --config ./src/shared/configs/graphql.config.yml --watch --verbose"
+    "build": "cross-env NODE_ENV=production webpack --stats-error-details"
   },
   "engines": {
     "node": ">=20.0.0"
@@ -39,12 +38,17 @@
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.18.6",
     "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
     "@fontsource/roboto": "^5.0.13",
+    "@mui/icons-material": "^6.3.1",
+    "@mui/material": "^6.3.0",
     "@reduxjs/toolkit": "^2.2.6",
     "appwrite": "^15.0.0",
     "axios": "^1.7.2",
     "axios-observable": "^2.0.0",
     "classnames": "^2.5.1",
+    "core-js": "^3.37.1",
     "dayjs": "^1.11.11",
     "mini-css-extract-plugin": "^2.9.0",
     "react": "^18.3.1",
@@ -55,8 +59,7 @@
     "redux-observable": "^2.0.0",
     "rxjs": "^7.8.1",
     "sitemap-webpack-plugin": "^1.1.1",
-    "uuid": "^10.0.0",
-    "core-js": "^3.37.1"
+    "uuid": "^10.0.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.24.7",
@@ -85,7 +88,6 @@
     "crypto-browserify": "^3.12.0",
     "css-loader": "^7.1.2",
     "eslint": "^9.6.0",
-    "process": "^0.11.10",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jsx-a11y": "^6.9.0",
     "eslint-plugin-optimize-regex": "^1.2.1",
@@ -96,6 +98,7 @@
     "imagemin-webpack-plugin": "^2.4.2",
     "path-browserify": "^1.0.1",
     "prettier": "^3.3.2",
+    "process": "^0.11.10",
     "react-refresh": "^0.14.2",
     "sass": "^1.80.5",
     "sass-loader": "^16.0.3",
