@@ -15,5 +15,5 @@ jobs:
       run: docker build ./web/ -t ilya9/vkr:latest
     - name: Push the Docker image
       run: |
-        docker login -u ilya9 -p ${{DOCKER_HUB_TOKEN}}
+        docker login -u ilya9 -p ${{ secrets.DOCKER_HUB_TOKEN }}
         docker push ilya9/vkr:latest
