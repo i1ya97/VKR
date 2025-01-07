@@ -7,7 +7,7 @@ COPY ./app .
 
 RUN yarn build
 
-FROM nginx
+FROM nginx:alpine
 RUN apk add bash --no-cache
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY ./substitute-env.sh .
