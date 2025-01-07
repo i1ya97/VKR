@@ -9,7 +9,7 @@ jobs:
   web:
     runs-on: ubuntu-latest
     env: 
-      CR_REGISTORY: crpcrf7hqccqpboq6nn1
+      CR_REGISTRY: crpcrf7hqccqpboq6nn1
       CR_REPOSITORY: web
       IMAGE_TAG: latest
     steps:
@@ -23,6 +23,7 @@ jobs:
         yc-sa-json-credentials: ${{ secrets.AUTHORIZED_KEY }}
 
     - name: Build the Docker image
-      run: | 
-        docker build ./web/ -t cr.yandex/$CR_REGISTORY/$CR_REPOSITORY:$IMAGE_TAG
-        docker push cr.yandex/$CR_REGISTORY/$CR_REPOSITORY:$IMAGE_TAG
+      run: docker build ./web/ -t cr.yandex/$CR_REGISTRY/$CR_REPOSITORY:$IMAGE_TAG .
+      
+    - name: Push the Docker image
+      run: docker push cr.yandex/$CR_REGISTRY/$CR_REPOSITORY:$IMAGE_TAG
