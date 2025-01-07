@@ -26,4 +26,4 @@ jobs:
       run: docker build ./web/ -t cr.yandex/$CR_REGISTRY/$CR_REPOSITORY:$IMAGE_TAG
       
     - name: Push the Docker image
-      run: docker push cr.yandex/$CR_REGISTRY/$CR_REPOSITORY:$IMAGE_TAG
+      run: docker push \ cr.yandex/$CR_REGISTRY/$CR_REPOSITORY:$IMAGE_TAG
