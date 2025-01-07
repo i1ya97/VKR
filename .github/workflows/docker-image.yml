@@ -23,7 +23,7 @@ jobs:
         yc-sa-json-credentials: ${{ secrets.AUTHORIZED_KEY }}
 
     - name: Build the Docker image
-      run: docker build ./web/ -t cr.yandex/$CR_REGISTORY/$CR_REPOSITORY/web:$IMAGE_TAG
+      run: docker build ./web/ -t cr.yandex/$CR_REGISTORY/$CR_REPOSITORY:$IMAGE_TAG
 
     - name: Push the Docker image
-      run: docker push cr.yandex/$CR_REGISTORY/$CR_REPOSITORY/web:$IMAGE_TAG
+      run: docker push cr.yandex/$CR_REGISTORY/$CR_REPOSITORY:$IMAGE_TAG
