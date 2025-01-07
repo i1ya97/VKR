@@ -8,12 +8,22 @@ on:
 jobs:
   web:
     runs-on: ubuntu-latest
+    env: 
+      CR_REGISTORY: crpcrf7hqccqpboq6nn1
+      CR_REPOSITORY: web
+      IMAGE_TAG: latest
     steps:
     - name: checkout
       uses: actions/checkout@v4
+
+    - name: Login Yandex Cloud
+      id: login-cr
+      uses: yc-actions/yc-cr-login@v1
+      with:
+        yc-sa-json-credentials: ${{ secrets.AUTHORIZED_KEY }}
+
     - name: Build the Docker image
-      run: docker build ./web/ -t ilya9/vkr:latest
+      run: docker build ./web/ -t cr.yandex/$CR_REGISTORY/$CR_REPOSITORY/web:$IMAGE_TAG
+
     - name: Push the Docker image
-      run: |
-        docker login -u ilya9 -p ${{ secrets.DOCKER_HUB_TOKEN }}
-        docker push ilya9/vkr:latest
+      run: docker push cr.yandex/$CR_REGISTORY/$CR_REPOSITORY/web:$IMAGE_TAG
