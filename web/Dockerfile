@@ -1,4 +1,4 @@
-FROM docker.nntc.pro/node:20 AS ui-builder
+FROM node:20 AS ui-builder
 WORKDIR /app
 COPY ./app/package.json .
 COPY ./app/yarn.lock .
@@ -7,7 +7,7 @@ COPY ./app .
 
 RUN yarn build
 
-FROM docker.nntc.pro/nginx:alpine
+FROM nginx
 RUN apk add bash --no-cache
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY ./substitute-env.sh .

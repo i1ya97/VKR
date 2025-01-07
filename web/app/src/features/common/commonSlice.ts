@@ -5,6 +5,7 @@ import { Models } from 'appwrite';
 
 const initState: CommonState = {
   user: null,
+  theme: 'dark',
 };
 
 export const commonSlice = createSlice({
@@ -14,9 +15,13 @@ export const commonSlice = createSlice({
     setUser: (state, { payload }: PayloadAction<Models.User<Models.Preferences> | null>) => {
       state.user = payload;
     },
+    setTheme: (state, { payload }: PayloadAction<'dark' | 'light'>) => {
+      state.theme = payload;
+    },
   },
 });
 
 export const {
   setUser,
+  setTheme,
 } = commonSlice.actions;

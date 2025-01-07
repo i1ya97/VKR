@@ -6,10 +6,10 @@ import Card from "@mui/material/Card";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
-import { createEmailSession } from "@shared/api";
-import { catchError, of } from "rxjs";
-import { useAppSelector } from "@shared/hooks";
-import { selectUser } from "@features/common";
+import { createEmailSession, getAccount } from "@shared/api";
+import { catchError, of, switchMap } from "rxjs";
+import { useAppDispatch, useAppSelector } from "@shared/hooks";
+import { selectUser, setUser } from "@features/common";
 
 export const Login = () => {
 
@@ -19,7 +19,7 @@ export const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
 
-
+  const dispath = useAppDispatch();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -37,8 +37,12 @@ export const Login = () => {
         setError(err.message);
         return of(null)
       }),
+      switchMap(() => {
+        return getAccount()
+      })
     ).subscribe((res) => {
       if (res) {
+        dispath(setUser(res))
         navigate('/');
       }
     });

@@ -22,9 +22,9 @@ export const HomePage = () => {
       <SideBar open={open} setOpen={setOpen} />
       <Box sx={{ width: open ? 'calc(100% - 320px)' : 'calc(100% - 88px)', height: '100%' }}>
         <Routes>
-          <Route path="/" element={<>Главная</>} />
-          <Route path="/analytics-ozon" element={<>analytics-ozon</>} />
-          <Route path="/settings" element={<>settings</>} />
+          <Route path="/" element={<></>} />
+          <Route path="/analytics-ozon" element={<></>} />
+          <Route path="/settings" element={<></>} />
         </Routes>
       </Box>
     </RootComponent>

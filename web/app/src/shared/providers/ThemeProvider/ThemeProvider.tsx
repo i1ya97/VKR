@@ -1,5 +1,7 @@
 import { PropsWithChildren } from 'react';
-import { createTheme, ThemeProvider as ThemeProviderMUI  } from '@mui/material/styles';
+import { createTheme, ThemeProvider as ThemeProviderMUI } from '@mui/material/styles';
+import { useAppSelector } from '@shared/hooks';
+import { selectTheme } from '@features/common';
 
 const themeDark = createTheme({
   palette: {
@@ -23,11 +25,12 @@ const themeLight = createTheme({
 export const ThemeProvider = (props: PropsWithChildren) => {
   const { children } = props;
 
-  const dark = true;
+  const theme = useAppSelector(selectTheme);
 
+  const darkMode = theme === 'dark';
 
   return (
-    <ThemeProviderMUI theme={dark ? themeDark : themeLight}>
+    <ThemeProviderMUI theme={darkMode ? themeDark : themeLight}>
       {children}
     </ThemeProviderMUI>
   );

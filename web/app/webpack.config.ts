@@ -226,16 +226,7 @@ const clientConfig = {
           port: 17602,
           historyApiFallback: true,
           client: {
-            overlay: {
-              runtimeErrors: (error: { message: string }) => {
-                // Временно, эта ошибка возникает из-за HtmlLabel в @visx/annotation
-                if (error?.message.includes('ResizeObserver loop')) {
-                  console.error(error);
-                  return false;
-                }
-                return true;
-              },
-            },
+            overlay: {},
           },
           proxy: [],
         },

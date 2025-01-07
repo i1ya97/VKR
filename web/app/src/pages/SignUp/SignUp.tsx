@@ -6,24 +6,25 @@ import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
-import { createAccount, createEmailSession } from "@shared/api";
+import { createAccount, createEmailSession, getAccount } from "@shared/api";
 import { catchError, map, of, switchMap } from "rxjs";
-import { selectUser } from "@features/common";
-import { useAppSelector } from "@shared/hooks";
+import { selectUser, setUser } from "@features/common";
+import { useAppDispatch, useAppSelector } from "@shared/hooks";
 
 export const SignUp = () => {
 
-  const user = useAppSelector(selectUser); 
+  const user = useAppSelector(selectUser);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
 
+  const dispath = useAppDispatch();
   const navigate = useNavigate();
 
   useEffect(() => {
-    if(user) navigate('/')
+    if (user) navigate('/')
   }, [user])
 
   const handleLogin = () => {
@@ -35,8 +36,15 @@ export const SignUp = () => {
     createAccount(email, password, name).pipe(
       switchMap(() => {
         return createEmailSession(email, password).pipe(
-          map(() => {
-            navigate("/");
+          switchMap(() => {
+            return getAccount().pipe(
+              map((res) => {
+                if (res) {
+                  dispath(setUser(res))
+                  navigate("/");
+                }
+              }),
+            )
           }),
           catchError((err) => {
             setError(err.message);

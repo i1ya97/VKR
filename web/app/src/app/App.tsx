@@ -15,12 +15,12 @@ function App() {
 
   return (
     <BrowserRouter>
-      <ThemeProvider >
-        <CssBaseline />
-        <Provider store={store}>
+      <Provider store={store}>
+        <ThemeProvider >
+          <CssBaseline />
           <RouteProvider />
-        </Provider>
-      </ThemeProvider>
+        </ThemeProvider>
+      </Provider>
     </BrowserRouter>
   );
 }

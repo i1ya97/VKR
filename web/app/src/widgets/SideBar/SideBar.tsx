@@ -1,6 +1,6 @@
 import { map } from "rxjs";
 import { useLocation, useNavigate } from "react-router-dom";
-import { selectUser, setUser } from "@features/common";
+import { selectTheme, selectUser, setTheme, setUser } from "@features/common";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Avatar from "@mui/material/Avatar";
@@ -13,11 +13,13 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import SettingsIcon from '@mui/icons-material/Settings';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeIcon from '@mui/icons-material/LightMode';
 
 import { useAppDispatch, useAppSelector } from "@shared/hooks";
-import { sideBarItems } from "./сonstants";
-import { SideBarRootComponent } from "./ui/SideBarRootComponent";
-
+import { SideBarRoot } from "./ui/SideBarRoot";
+import { Profile } from "./ui/Profile";
+import { sideBarItems } from "./constants";
 interface Props {
   open: boolean,
   setOpen: (open: boolean) => void;
@@ -29,9 +31,10 @@ export const SideBar = (props: Props) => {
 
   const location = useLocation();
 
-  console.log(location)
-
+  const theme = useAppSelector(selectTheme);
   const user = useAppSelector(selectUser);
+
+  const darkMode = theme === 'dark';
 
   const navigate = useNavigate();
   const dispath = useAppDispatch();
@@ -57,8 +60,12 @@ export const SideBar = (props: Props) => {
     setOpen(!open);
   }
 
+  const handleChangeTheme = () => {
+    dispath(setTheme(!!darkMode ? 'light' : 'dark')) 
+  }
+
   return (
-    <SideBarRootComponent sx={{ width: open ? '320px' : '88px' }}>
+    <SideBarRoot sx={{ width: open ? '320px' : '88px' }}>
       <Box sx={{
         display: 'flex',
         flexDirection: 'column',
@@ -66,15 +73,18 @@ export const SideBar = (props: Props) => {
         justifyContent: 'space-between'
       }}>
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: '24px', height: '100%' }}>
-          <Box sx={{ display: 'flex', gap: '16px', alignItems: 'center', padding: '4px' }}>
+          <Profile>
             <Avatar sx={{ width: 48, height: 48 }}>{user?.name[0]}</Avatar>
             {open && <Typography>{user?.email}</Typography>}
-          </Box>
+            {open && <IconButton onClick={handleChangeTheme} >
+              {darkMode ? <DarkModeIcon /> : <LightModeIcon />}
+            </IconButton>}
+          </Profile>
           <Box sx={{ display: 'flex', gap: '8px', flexDirection: 'column' }}>
             {sideBarItems.map((item) => (
               <ListItemButton
                 onClick={() => handleOpenRoute(item.path)}
-                sx={{ borderRadius: '8px' }}
+                sx={{ borderRadius: '8px', height: '44px' }}
                 selected={hasSelected(item.path)}
               >
                 <ListItemIcon>
@@ -88,7 +98,7 @@ export const SideBar = (props: Props) => {
         <Box sx={{ display: 'flex', gap: '8px', flexDirection: 'column' }}>
           <ListItemButton
             onClick={() => handleOpenRoute('/settings')}
-            sx={{ borderRadius: '8px' }}
+            sx={{ borderRadius: '8px', height: '44px' }}
             selected={hasSelected('/settings')}
           >
             <ListItemIcon>
@@ -96,22 +106,20 @@ export const SideBar = (props: Props) => {
             </ListItemIcon>
             {open && <ListItemText secondary='Настройки' />}
           </ListItemButton>
-          <ListItemButton onClick={handleExit} sx={{ borderRadius: '8px' }} >
+          <ListItemButton onClick={handleExit} sx={{ borderRadius: '8px', height: '44px' }} >
             <ListItemIcon>
               <LogoutIcon />
             </ListItemIcon>
             {open && <ListItemText secondary='Выйти' />}
           </ListItemButton>
+          <ListItemButton onClick={handleResize} sx={{ borderRadius: '8px', height: '44px' }} >
+            <ListItemIcon>
+              {open ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+            </ListItemIcon>
+            {open && <ListItemText secondary='Свернуть' />}
+          </ListItemButton>
         </Box>
       </Box>
-      <IconButton
-        onClick={handleResize}
-        sx={{
-          position: 'absolute',
-          left: open ? '320px' : '88px', top: '24px'
-        }}>
-        {open ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-      </IconButton>
-    </SideBarRootComponent>
+    </SideBarRoot>
   );
 };
