@@ -27,6 +27,15 @@ jobs:
       
     - name: Push image
       run: docker push cr.yandex/$CR_REGISTRY/$CR_REPOSITORY:$IMAGE_TAG
+
+    - name: Connect to VM via SSH
+      uses: appleboy/ssh-action@master
+      with:
+        host: 51.250.32.125
+        username: ilya997
+        key: ${{ secrets.KEY }}
+        passphrase: ${{ secrets.PASSPHRASE }}
+        port: 22
     
     - name: Run images VM
       run: |
