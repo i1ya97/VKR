@@ -69,10 +69,11 @@ jobs:
         key: ${{ secrets.KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
         port: 22
+        envs: PATH_IMAGE
+        script: |
+          sudo docker login --username oauth --password ${{ secrets.OAUTH_TOKEN }} cr.yandex
+          sudo docker rm --force backend
+          sudo docker pull $PATH_IMAGE
+          sudo docker run --name backend -dp 17601:80 $PATH_IMAGE
     
-    - name: Run images VM
-      run: |
-        sudo docker login --username oauth --password ${{ secrets.OAUTH_TOKEN }} cr.yandex &&
-        sudo docker rm --force backend &&
-        sudo docker run --name backend -dp 17601:80 $PATH_IMAGE
        
