@@ -37,6 +37,7 @@ jobs:
         script: |
           sudo docker login --username oauth --password ${{ secrets.OAUTH_TOKEN }} cr.yandex
           sudo docker rm --force web
+          sudo docker pull $PATH_IMAGE
           sudo docker run --name web -dp 17602:80 $PATH_IMAGE
           
   backend:
