@@ -9,7 +9,7 @@ jobs:
   web:
     runs-on: ubuntu-latest
     env: 
-      PATH: cr.yandex/crpcrf7hqccqpboq6nn1/web:latest
+      PATH_IMAGE: cr.yandex/crpcrf7hqccqpboq6nn1/web:latest
     steps:
     - name: checkout
       uses: actions/checkout@v4
@@ -21,10 +21,10 @@ jobs:
         yc-sa-json-credentials: ${{ secrets.AUTHORIZED_KEY }}
 
     - name: Build image
-      run: docker build ./web/ -t $PATH
+      run: docker build ./web/ -t $PATH_IMAGE
       
     - name: Push image
-      run: docker push $PATH
+      run: docker push $PATH_IMAGE
 
     - name: Connect to VM via SSH
       uses: appleboy/ssh-action@master
@@ -39,5 +39,39 @@ jobs:
       run: |
         sudo docker login --username oauth --password ${{ secrets.OAUTH_TOKEN }} cr.yandex &&
         sudo docker rm --force web &&
-        sudo docker run --name web -dp 17602:80 $PATH
+        sudo docker run --name web -dp 17602:80 $PATH_IMAGE
+  backend:
+    runs-on: ubuntu-latest
+    env: 
+      PATH_IMAGE: cr.yandex/crpcrf7hqccqpboq6nn1/backend:latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@v4
+
+    - name: Login Yandex Cloud
+      id: login-cr
+      uses: yc-actions/yc-cr-login@v1
+      with:
+        yc-sa-json-credentials: ${{ secrets.AUTHORIZED_KEY }}
+
+    - name: Build image
+      run: docker build ./backend/backend/ -t $PATH_IMAGE
+      
+    - name: Push image
+      run: docker push $PATH_IMAGE
+
+    - name: Connect to VM via SSH
+      uses: appleboy/ssh-action@master
+      with:
+        host: 51.250.32.125
+        username: ilya997
+        key: ${{ secrets.KEY }}
+        passphrase: ${{ secrets.PASSPHRASE }}
+        port: 22
+    
+    - name: Run images VM
+      run: |
+        sudo docker login --username oauth --password ${{ secrets.OAUTH_TOKEN }} cr.yandex &&
+        sudo docker rm --force backend &&
+        sudo docker run --name backend -dp 17601:80 $PATH_IMAGE
        
