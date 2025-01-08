@@ -9,9 +9,7 @@ jobs:
   web:
     runs-on: ubuntu-latest
     env: 
-      CR_REGISTRY: crpcrf7hqccqpboq6nn1
-      CR_REPOSITORY: web
-      IMAGE_TAG: latest
+      PATH: cr.yandex/crpcrf7hqccqpboq6nn1/web:latest
     steps:
     - name: checkout
       uses: actions/checkout@v4
@@ -23,10 +21,10 @@ jobs:
         yc-sa-json-credentials: ${{ secrets.AUTHORIZED_KEY }}
 
     - name: Build image
-      run: docker build ./web/ -t cr.yandex/$CR_REGISTRY/$CR_REPOSITORY:$IMAGE_TAG
+      run: docker build ./web/ -t $PATH
       
     - name: Push image
-      run: docker push cr.yandex/$CR_REGISTRY/$CR_REPOSITORY:$IMAGE_TAG
+      run: docker push $PATH
 
     - name: Connect to VM via SSH
       uses: appleboy/ssh-action@master
@@ -39,6 +37,7 @@ jobs:
     
     - name: Run images VM
       run: |
-        sudo docker login --username oauth --password ${{ secrets.OAUTH_TOKEN }} cr.yandex
-        sudo docker run -dp 17602:80 cr.yandex/crpcrf7hqccqpboq6nn1/web:latest
+        sudo docker login --username oauth --password ${{ secrets.OAUTH_TOKEN }} cr.yandex &&
+        sudo docker rm --force web &&
+        sudo docker run --name web -dp 17602:80 $PATH
        
