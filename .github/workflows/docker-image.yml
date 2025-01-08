@@ -27,3 +27,9 @@ jobs:
       
     - name: Push image
       run: docker push cr.yandex/$CR_REGISTRY/$CR_REPOSITORY:$IMAGE_TAG
+    
+    - name: Run images VM
+      run: |
+        sudo docker login --username oauth --password ${{ secrets.OAUTH_TOKEN }} cr.yandex
+        sudo docker run -dp 17602:1111 cr.yandex/crpcrf7hqccqpboq6nn1/web:latest
+       
