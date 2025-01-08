@@ -40,5 +40,5 @@ jobs:
     - name: Run images VM
       run: |
         sudo docker login --username oauth --password ${{ secrets.OAUTH_TOKEN }} cr.yandex
-        sudo docker run -dp 17602:1111 cr.yandex/crpcrf7hqccqpboq6nn1/web:latest
+        sudo docker run -dp 17602:80 cr.yandex/crpcrf7hqccqpboq6nn1/web:latest
        
