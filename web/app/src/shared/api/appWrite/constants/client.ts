@@ -1,6 +1,6 @@
 import { Client } from 'appwrite';
 
-const endPoint = `https://51.250.32.125:5000/v1`;
+const endPoint = `http://51.250.32.125:17600/v1`;
 
 const projectId = '6777b84800366212389d';
 

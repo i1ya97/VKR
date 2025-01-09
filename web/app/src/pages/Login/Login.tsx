@@ -54,7 +54,7 @@ export const Login = () => {
       sx={{
         width: '100%',
         height: '100%',
-        background: 'url("./img/wave.jpg")',
+        background: 'url("./favicon/wave.jpg")',
         position: 'fixed',
         display: 'flex',
         backgroundSize: 'cover',
