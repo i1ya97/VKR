@@ -17,7 +17,6 @@ const RootComponent = styled('div')(({ theme }) => ({
 export const HomePage = () => {
 
   const [open, setOpen] = useState<boolean>(false);
-      Axios.defaults.headers = {
 
   return (
     <AuthProvider>
