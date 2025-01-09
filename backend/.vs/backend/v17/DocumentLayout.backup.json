@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\ichusovlyanov\\Documents\\GitHub\\VKR\\backend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|c:\\users\\ichusovlyanov\\documents\\github\\vkr\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|c:\\users\\ichusovlyanov\\documents\\github\\vkr\\backend\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|solutionrelative:controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|backend.csproj|c:\\users\\ichusovlyanov\\documents\\github\\vkr\\backend\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|backend.csproj|solutionrelative:weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ichusovlyanov\\Documents\\GitHub\\VKR\\backend\\Migrations\\20250109082832_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20250109082832_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|c:\\users\\ichusovlyanov\\documents\\github\\vkr\\backend\\applicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,6 +21,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|c:\\users\\ichusovlyanov\\documents\\github\\vkr\\backend\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|solutionrelative:dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|c:\\users\\ichusovlyanov\\documents\\github\\vkr\\backend\\migrations\\20250109082832_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|solutionrelative:migrations\\20250109082832_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|c:\\users\\ichusovlyanov\\documents\\github\\vkr\\backend\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|solutionrelative:weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,11 +38,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ichusovlyanov\\Documents\\GitHub\\VKR\\backend\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\ichusovlyanov\\Documents\\GitHub\\VKR\\backend\\Program.cs*",
+              "RelativeToolTip": "Program.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T09:23:20.711Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "20250109082832_init.cs",
               "DocumentMoniker": "C:\\Users\\ichusovlyanov\\Documents\\GitHub\\VKR\\backend\\Migrations\\20250109082832_init.cs",
               "RelativeDocumentMoniker": "Migrations\\20250109082832_init.cs",
@@ -51,20 +68,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "20250109082700_init.cs",
               "DocumentMoniker": "C:\\Users\\ichusovlyanov\\Documents\\GitHub\\VKR\\backend\\Migrations\\20250109082700_init.cs",
               "RelativeDocumentMoniker": "Migrations\\20250109082700_init.cs",
               "ToolTip": "C:\\Users\\ichusovlyanov\\Documents\\GitHub\\VKR\\backend\\Migrations\\20250109082700_init.cs",
               "RelativeToolTip": "Migrations\\20250109082700_init.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T08:27:00.696Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-09T08:27:00.696Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "ApplicationContext.cs",
               "DocumentMoniker": "C:\\Users\\ichusovlyanov\\Documents\\GitHub\\VKR\\backend\\ApplicationContext.cs",
               "RelativeDocumentMoniker": "ApplicationContext.cs",
@@ -77,33 +92,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "WeatherForecastController.cs",
               "DocumentMoniker": "C:\\Users\\ichusovlyanov\\Documents\\GitHub\\VKR\\backend\\Controllers\\WeatherForecastController.cs",
               "RelativeDocumentMoniker": "Controllers\\WeatherForecastController.cs",
               "ToolTip": "C:\\Users\\ichusovlyanov\\Documents\\GitHub\\VKR\\backend\\Controllers\\WeatherForecastController.cs",
               "RelativeToolTip": "Controllers\\WeatherForecastController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAAwCcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-09T08:07:55.019Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "Dockerfile",
               "DocumentMoniker": "C:\\Users\\ichusovlyanov\\Documents\\GitHub\\VKR\\backend\\Dockerfile",
               "RelativeDocumentMoniker": "Dockerfile",
               "ToolTip": "C:\\Users\\ichusovlyanov\\Documents\\GitHub\\VKR\\backend\\Dockerfile",
               "RelativeToolTip": "Dockerfile",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-01-09T08:02:06.635Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "WeatherForecast.cs",
               "DocumentMoniker": "C:\\Users\\ichusovlyanov\\Documents\\GitHub\\VKR\\backend\\WeatherForecast.cs",
               "RelativeDocumentMoniker": "WeatherForecast.cs",

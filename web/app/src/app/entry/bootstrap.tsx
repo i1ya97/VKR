@@ -7,7 +7,7 @@ import './global.css';
 import App from '../App';
 
 createRoot(document.getElementById('react_root') as HTMLElement).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  // <React.StrictMode>
+  <App />,
+  // </React.StrictMode>,
 );
