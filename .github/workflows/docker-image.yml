@@ -74,6 +74,6 @@ jobs:
           sudo docker login --username oauth --password ${{ secrets.OAUTH_TOKEN }} cr.yandex
           sudo docker rm --force backend
           sudo docker pull $PATH_IMAGE
-          sudo docker run --name backend -dp 17601:80 $PATH_IMAGE
+          sudo docker run --name backend -dp 17601:8080 $PATH_IMAGE
     
        
