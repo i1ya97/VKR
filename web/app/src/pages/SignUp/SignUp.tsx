@@ -8,23 +8,32 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import { createAccount, createEmailSession, getAccount } from '@shared/api';
 import { catchError, map, of, switchMap } from 'rxjs';
-import { selectUser, setUser } from '@features/common';
-import { useAppDispatch, useAppSelector } from '@shared/hooks';
+import { setUser } from '@features/common';
+import { useAppDispatch } from '@shared/hooks';
 
 export const SignUp = () => {
-  const user = useAppSelector(selectUser);
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
+  const [loadingUser, setLoadingUser] = useState(true);
 
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (user) navigate('/');
-  }, [user]);
+    getAccount()
+      .pipe(
+        catchError(() => {
+          return of(null);
+        }),
+      )
+      .subscribe((res) => {
+        if (res) navigate('/');
+        setLoadingUser(false);
+      });
+  }, []);
 
   const handleLogin = () => {
     navigate('/login');
@@ -60,7 +69,7 @@ export const SignUp = () => {
       .subscribe();
   };
 
-  return (
+  return !loadingUser && (
     <Box
       sx={{
         width: '100%',

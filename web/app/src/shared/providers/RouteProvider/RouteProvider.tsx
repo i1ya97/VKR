@@ -2,28 +2,9 @@ import { Route, Routes, useNavigate } from 'react-router-dom';
 import { HomePage } from '@pages/HomePage';
 import { SignUp } from '@pages/SignUp';
 import { Login } from '@pages/Login';
-import { useEffect } from 'react';
-import { getAccount } from '@shared/api';
-import { catchError, of } from 'rxjs';
-import { useAppDispatch } from '@shared/hooks';
-import { setUser } from '@features/common';
+import { AuthProvider } from '../AuthProvider/AuthProvider';
 
 export const RouteProvider = () => {
-  const dispatch = useAppDispatch();
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    getAccount()
-      .pipe(
-        catchError(() => {
-          navigate('/login');
-          return of(null);
-        }),
-      )
-      .subscribe((res) => {
-        dispatch(setUser(res));
-      });
-  }, []);
 
   return (
     <Routes>

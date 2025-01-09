@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
-using System;
 using API;
+using API.helpers;
+using Appwrite;
 using Microsoft.OpenApi.Models;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,30 +13,16 @@ builder.Services.AddDbContextPool<ApplicationContext>(opt => opt.UseNpgsql(conne
 // Add services to the container.
 
 builder.Services.AddControllers();
-
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-//builder.Services.AddSwaggerGen();
 
-builder.Services.AddAuthentication(options =>
-{
-    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-})
-    .AddJwtBearer(options =>
-    {
-        options.Authority = "https://51.250.32.125:5000/v1"; // Appwrite endpoint
-        options.Audience = "6777b84800366212389d"; // Your Appwrite project ID
-    });
-
-// Register Swagger services
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         In = ParameterLocation.Header,
-        Description = "Please enter your token",
+        Description = "¬ведите ваш токен",
         Name = "Authorization",
         Type = SecuritySchemeType.ApiKey
     });
@@ -60,10 +46,11 @@ var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI();
 
-app.UseHttpsRedirection();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseMiddleware<UserMiddleware>();
 
 app.Run();

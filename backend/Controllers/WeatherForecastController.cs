@@ -1,4 +1,6 @@
 using API;
+using Appwrite.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,6 +20,12 @@ public class WeatherForecastController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<IEnumerable<WeatherForecast>>> GetWeatherForecasts()
     {
+        //if (HttpContext.Items.TryGetValue("User", out var userObj) && userObj is User user)
+        //{
+        //    // Теперь вы можете использовать объект user
+        //    return Ok(user.Id);
+        //}
+
         if (_context.WeatherForecasts == null)
         {
             return NotFound();

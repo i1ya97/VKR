@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "My API",
+    "title": "API",
     "version": "v1"
   },
   "paths": {
@@ -121,7 +121,7 @@
     "securitySchemes": {
       "Bearer": {
         "type": "apiKey",
-        "description": "Please enter your token",
+        "description": "Введите ваш токен",
         "name": "Authorization",
         "in": "header"
       }

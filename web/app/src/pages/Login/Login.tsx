@@ -8,22 +8,31 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import { createEmailSession, getAccount } from '@shared/api';
 import { catchError, of, switchMap } from 'rxjs';
-import { useAppDispatch, useAppSelector } from '@shared/hooks';
-import { selectUser, setUser } from '@features/common';
+import { useAppDispatch } from '@shared/hooks';
+import { setUser } from '@features/common';
 
 export const Login = () => {
-  const user = useAppSelector(selectUser);
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
+  const [loadingUser, setLoadingUser] = useState(true);
 
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (user) navigate('/');
-  }, [user]);
+    getAccount()
+      .pipe(
+        catchError(() => {
+          return of(null);
+        }),
+      )
+      .subscribe((res) => {
+        if (res) navigate('/');
+        setLoadingUser(false);
+      });
+  }, []);
 
   const handleSingUp = () => {
     navigate('/singup');
@@ -49,7 +58,7 @@ export const Login = () => {
       });
   };
 
-  return (
+  return !loadingUser && (
     <Box
       sx={{
         width: '100%',
