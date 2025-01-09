@@ -228,7 +228,13 @@ const clientConfig = {
           client: {
             overlay: {},
           },
-          proxy: [],
+          proxy: [
+            {
+              context: ['/api'],
+              target: 'http://51.250.32.125:17601/',
+              pathRewrite: { '^/api': '' },
+            },
+          ],
         },
       }
     : {}),

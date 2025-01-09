@@ -9,19 +9,20 @@ import { useAppDispatch } from '@shared/hooks';
 import { setUser } from '@features/common';
 
 export const RouteProvider = () => {
-
-  const dispath = useAppDispatch();
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   useEffect(() => {
-    getAccount().pipe(
-      catchError(() => {
-        navigate('/login');
-        return of(null)
-      }),
-    ).subscribe((res) => {
-      dispath(setUser(res))
-    })
+    getAccount()
+      .pipe(
+        catchError(() => {
+          navigate('/login');
+          return of(null);
+        }),
+      )
+      .subscribe((res) => {
+        dispatch(setUser(res));
+      });
   }, []);
 
   return (

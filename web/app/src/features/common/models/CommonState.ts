@@ -1,6 +1,8 @@
-import { Models } from "appwrite";
+import { Models } from 'appwrite';
+import { WeatherForecast } from './WeatherForecast';
 
 export interface CommonState {
   user: Models.User<Models.Preferences> | null;
-  theme: 'dark' | 'light',
+  theme: 'dark' | 'light';
+  weatherForecasts: WeatherForecast[];
 }
