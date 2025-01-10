@@ -2,9 +2,12 @@ import { Route, Routes } from 'react-router-dom';
 import { Box, styled } from '@mui/material';
 
 import { SideBar } from '@widgets/SideBar';
-import { useState } from 'react';
 import { Home } from '@widgets/Home';
 import { AuthProvider } from '@shared/providers/AuthProvider';
+import { useAppDispatch, useAppSelector } from '@shared/hooks';
+import { selectOpenSideBar, selectUser, setOpenSideBar } from '@features/common';
+import { AppWriteCollection, updateDocument } from '@shared/api';
+import { Settings } from '@widgets/Settings';
 
 const RootComponent = styled('div')(({ theme }) => ({
   background: theme.palette.background.default,
@@ -15,21 +18,30 @@ const RootComponent = styled('div')(({ theme }) => ({
 }));
 
 export const HomePage = () => {
+  const dispatch = useAppDispatch();
 
-  const [open, setOpen] = useState<boolean>(false);
+  const openSideBar = useAppSelector(selectOpenSideBar);
+  const user = useAppSelector(selectUser);
+
+  const setOpen = (open: boolean) => {
+    updateDocument(AppWriteCollection.openSideBar, openSideBar.id, {
+      userId: user?.$id ?? '',
+      value: open,
+    }).subscribe(() => dispatch(setOpenSideBar(open)));
+  };
 
   return (
     <AuthProvider>
       <RootComponent>
-        <SideBar open={open} setOpen={setOpen} />
-        <Box sx={{ width: open ? 'calc(100% - 320px)' : 'calc(100% - 88px)', height: '100%' }}>
+        <SideBar open={openSideBar.value} setOpen={setOpen} />
+        <Box sx={{ width: openSideBar.value ? 'calc(100% - 320px)' : 'calc(100% - 88px)', height: '100%' }}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/analytics-ozon" element={<></>} />
-            <Route path="/settings" element={<></>} />
+            <Route path="/settings" element={<Settings />} />
           </Routes>
         </Box>
       </RootComponent>
-    </AuthProvider >
+    </AuthProvider>
   );
 };

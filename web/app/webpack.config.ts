@@ -231,7 +231,7 @@ const clientConfig = {
           proxy: [
             {
               context: ['/api'],
-              target: 'http://localhost:21097/',
+              target: 'http://51.250.32.125:17601',
               pathRewrite: { '^/api': '' },
             },
           ],

@@ -1,16 +1,14 @@
-import { PropsWithChildren, useEffect, useLayoutEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import Axios from "axios-observable";
-import { catchError, of } from "rxjs";
+import { PropsWithChildren, useEffect, useLayoutEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Axios from 'axios-observable';
+import { catchError, of } from 'rxjs';
 
-import { createJWT, getAccount } from "@shared/api";
-import { selectUser, setUser } from "@features/common";
-import { useAppDispatch, useAppSelector } from "@shared/hooks";
+import { createJWT, getAccount } from '@shared/api';
+import { selectUser, setUser } from '@features/common';
+import { useAppDispatch, useAppSelector } from '@shared/hooks';
 
 export const AuthProvider = (props: PropsWithChildren) => {
-
   const { children } = props;
-
 
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
@@ -47,7 +45,6 @@ export const AuthProvider = (props: PropsWithChildren) => {
   useEffect(() => {
     if (user) {
       createJWT().subscribe((token) => {
-        console.log(token);
         setToken(token.jwt);
       });
     }

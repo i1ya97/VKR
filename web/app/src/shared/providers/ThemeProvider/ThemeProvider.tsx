@@ -8,7 +8,7 @@ const themeDark = createTheme({
     mode: 'dark',
     background: {
       default: '#161616',
-      paper: '#1c1c1c'
+      paper: '#1c1c1c',
     },
   },
 });
@@ -17,7 +17,7 @@ const themeLight = createTheme({
     mode: 'light',
     background: {
       default: '#ffffff',
-      paper: '#fafafa'
+      paper: '#fafafa',
     },
   },
 });
@@ -27,11 +27,7 @@ export const ThemeProvider = (props: PropsWithChildren) => {
 
   const theme = useAppSelector(selectTheme);
 
-  const darkMode = theme === 'dark';
+  const darkMode = theme.value === 'dark';
 
-  return (
-    <ThemeProviderMUI theme={darkMode ? themeDark : themeLight}>
-      {children}
-    </ThemeProviderMUI>
-  );
+  return <ThemeProviderMUI theme={darkMode ? themeDark : themeLight}>{children}</ThemeProviderMUI>;
 };

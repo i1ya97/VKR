@@ -8,7 +8,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import IconButton from '@mui/material/IconButton';
-import { deleteSession } from '@shared/api';
+import { AppWriteCollection, deleteSession, updateDocument } from '@shared/api';
 import LogoutIcon from '@mui/icons-material/Logout';
 import SettingsIcon from '@mui/icons-material/Settings';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
@@ -33,7 +33,7 @@ export const SideBar = (props: Props) => {
   const theme = useAppSelector(selectTheme);
   const user = useAppSelector(selectUser);
 
-  const darkMode = theme === 'dark';
+  const darkMode = theme.value === 'dark';
 
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
@@ -62,7 +62,11 @@ export const SideBar = (props: Props) => {
   };
 
   const handleChangeTheme = () => {
-    dispatch(setTheme(!!darkMode ? 'light' : 'dark'));
+    const value = !!darkMode ? 'light' : 'dark';
+    updateDocument(AppWriteCollection.activeTheme, theme.id, {
+      userId: user?.$id ?? '',
+      value: value,
+    }).subscribe(() => dispatch(setTheme(value)));
   };
 
   return (
@@ -78,7 +82,7 @@ export const SideBar = (props: Props) => {
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: '24px', height: '100%' }}>
           <Profile>
             <Avatar sx={{ width: 48, height: 48 }}>{user?.name[0]}</Avatar>
-            {open && <Typography>{user?.email}</Typography>}
+            {open && <Typography>{user?.name}</Typography>}
             {open && (
               <IconButton onClick={handleChangeTheme}>{darkMode ? <DarkModeIcon /> : <LightModeIcon />}</IconButton>
             )}

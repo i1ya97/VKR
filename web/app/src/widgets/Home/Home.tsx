@@ -16,7 +16,7 @@ export const Home = () => {
   return (
     <Box sx={{ padding: '16px' }}>
       {weatherForecasts.map((w) => (
-        <Box sx={{ display: 'flex', flexDirection: 'row', gap: '16px' }}>
+        <Box key={w.date} sx={{ display: 'flex', flexDirection: 'row', gap: '16px' }}>
           <Typography>{w.date}</Typography>
           <Typography>{w.temperatureC}</Typography>
           <Typography>{w.summary}</Typography>
