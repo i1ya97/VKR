@@ -9,12 +9,15 @@ import { store } from './store/store';
 import { RouteProvider, ThemeProvider } from '@shared/providers';
 import CssBaseline from '@mui/material/CssBaseline';
 
+dayjs.locale('ru');
+dayjs.extend(utc);
+
 function App() {
-  dayjs.locale('ru');
-  dayjs.extend(utc);
 
   return (
-    <BrowserRouter>
+    <BrowserRouter future={{
+      v7_startTransition: true,
+    }}>
       <Provider store={store}>
         <ThemeProvider >
           <CssBaseline />

@@ -4,12 +4,13 @@ import { CommonState } from './models/CommonState';
 import { Models } from 'appwrite';
 import { WeatherForecast } from './models/WeatherForecast';
 import { UserOptions } from './models/UserOptions';
+import { ApiCredentions } from './models/ApiCredentions';
 
 const initState: CommonState = {
   user: null,
   theme: { id: '', value: 'light' },
-  weatherForecasts: [],
   openSideBar: { id: '', value: true },
+  ozonApiCredentions: null,
 };
 
 export const commonSlice = createSlice({
@@ -29,13 +30,13 @@ export const commonSlice = createSlice({
       state.theme = payload.activeTheme;
       state.openSideBar = payload.openSideBar;
     },
+    setOzonApiCredentions: (state, { payload }: PayloadAction<ApiCredentions>) => {
+      state.ozonApiCredentions = payload;
+    },
     setOpenSideBar: (state, { payload }: PayloadAction<boolean>) => {
       state.openSideBar.value = payload;
-    },
-    setWeatherForecasts: (state, { payload }: PayloadAction<WeatherForecast[]>) => {
-      state.weatherForecasts = payload;
     },
   },
 });
 
-export const { setUser, setTheme, setWeatherForecasts, setUserOptions, setOpenSideBar } = commonSlice.actions;
+export const { setUser, setTheme, setUserOptions, setOpenSideBar, setOzonApiCredentions } = commonSlice.actions;

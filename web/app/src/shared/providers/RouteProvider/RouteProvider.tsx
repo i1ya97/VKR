@@ -1,8 +1,7 @@
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { HomePage } from '@pages/HomePage';
 import { SignUp } from '@pages/SignUp';
 import { Login } from '@pages/Login';
-import { AuthProvider } from '../AuthProvider/AuthProvider';
 
 export const RouteProvider = () => {
 

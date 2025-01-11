@@ -1,4 +1,4 @@
+import { fetchApiCredentionsEpic } from './fetchApiCredentions';
 import { fetchUserOptionsEpic } from './fetchUserOptions';
-import { fetchWeatherForecastEpic } from './fetchWeatherForecastEpic';
 
-export const commonEpics = [fetchWeatherForecastEpic, fetchUserOptionsEpic];
+export const commonEpics = [ fetchUserOptionsEpic, fetchApiCredentionsEpic];

@@ -1,4 +1,4 @@
-export { commonSlice, setUser, setTheme, setOpenSideBar } from './commonSlice';
-export { selectUser, selectTheme, selectWeatherForecasts, selectOpenSideBar } from './selectors';
+export { commonSlice, setUser, setTheme, setOpenSideBar, setOzonApiCredentions } from './commonSlice';
+export { selectUser, selectTheme, selectOpenSideBar, selectOzonApiCredentions } from './selectors';
 export { commonEpics } from './epics/epics';
-export { action as fetchWeatherForecast } from './epics/fetchWeatherForecastEpic';
+export { action as fetchApiCredentions } from './epics/fetchWeatherForecastEpic';
