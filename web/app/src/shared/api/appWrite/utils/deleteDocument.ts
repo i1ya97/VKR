@@ -1,6 +1,6 @@
 import { from } from 'rxjs';
 
-import { Collection } from '../constants/Collection';
+import { Collection } from '../constants/collection';
 import { databases, databaseId } from '../constants/databases';
 
 export const deleteDocument = (collectionId: Collection, documentId: string) => {

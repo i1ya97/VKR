@@ -1,7 +1,7 @@
 import { ID } from 'appwrite';
 import { from } from 'rxjs';
 
-import { Collection } from '../constants/Collection';
+import { Collection } from '../constants/collection';
 import { databases, databaseId } from '../constants/databases';
 
 export const createDocument = (collectionId: Collection, data: Record<string, string | null | boolean>) => {
