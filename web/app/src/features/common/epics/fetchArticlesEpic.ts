@@ -3,15 +3,16 @@ import { StateObservable, ofType } from 'redux-observable';
 import { Observable, catchError, from, map, mergeMap, throwError } from 'rxjs';
 
 import { ApiMethods, request } from '@shared/api';
-import { WeatherForecast } from '../models/WeatherForecast';
+import { ActionOut } from '@entities/store';
+import { setArticles } from '../commonSlice';
 
-export const action = createAction('common/fetchWeatherForecast');
+export const action = createAction('common/fetchArticles');
 
-export const fetchWeatherForecastEpic = (action$: Observable<Action>, state$: StateObservable<RootState>) => {
+export const fetchArticlesEpic = (action$: Observable<Action>, state$: StateObservable<RootState>) => {
   return action$.pipe(
     ofType(action.type),
     mergeMap(() => {
-      return from(request<WeatherForecast[]>(ApiMethods.GET, `/api`, `/WeatherForecast`)).pipe(
+      return from(request<Record<string, string>[]>(ApiMethods.GET, `/api`, `/Products`)).pipe(
         map((res) => {
           return res?.data ?? [];
         }),
@@ -19,7 +20,7 @@ export const fetchWeatherForecastEpic = (action$: Observable<Action>, state$: St
       );
     }),
     map((result) => {
-      return null;
+      return setArticles(result) as ActionOut;
     }),
   );
 };

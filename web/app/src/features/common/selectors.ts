@@ -7,3 +7,9 @@ export const selectTheme = (state: RootState) => commonModule(state).theme;
 export const selectOpenSideBar = (state: RootState) => commonModule(state).openSideBar;
 
 export const selectOzonApiCredentions = (state: RootState) => commonModule(state).ozonApiCredentions;
+
+export const selectUploadLogs = (state: RootState) => commonModule(state).uploadLogs;
+
+export const selectArticles = (state: RootState) => commonModule(state).articles;
+
+export const selectResidues = (state: RootState) => commonModule(state).residues;

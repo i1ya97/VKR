@@ -2,7 +2,6 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 import { CommonState } from './models/CommonState';
 import { Models } from 'appwrite';
-import { WeatherForecast } from './models/WeatherForecast';
 import { UserOptions } from './models/UserOptions';
 import { ApiCredentions } from './models/ApiCredentions';
 
@@ -11,6 +10,9 @@ const initState: CommonState = {
   theme: { id: '', value: 'light' },
   openSideBar: { id: '', value: true },
   ozonApiCredentions: null,
+  uploadLogs: [],
+  articles: [],
+  residues: [],
 };
 
 export const commonSlice = createSlice({
@@ -30,6 +32,15 @@ export const commonSlice = createSlice({
       state.theme = payload.activeTheme;
       state.openSideBar = payload.openSideBar;
     },
+    setUploadLogs: (state, { payload }: PayloadAction<Record<string, string>[]>) => {
+      state.uploadLogs = payload;
+    },
+    setArticles: (state, { payload }: PayloadAction<Record<string, string>[]>) => {
+      state.articles = payload;
+    },
+    setResidues: (state, { payload }: PayloadAction<Record<string, string>[]>) => {
+      state.residues = payload;
+    },
     setOzonApiCredentions: (state, { payload }: PayloadAction<ApiCredentions>) => {
       state.ozonApiCredentions = payload;
     },
@@ -39,4 +50,6 @@ export const commonSlice = createSlice({
   },
 });
 
-export const { setUser, setTheme, setUserOptions, setOpenSideBar, setOzonApiCredentions } = commonSlice.actions;
+export const { 
+  setUser, setTheme, setUserOptions, setOpenSideBar,setOzonApiCredentions, setUploadLogs, setArticles, setResidues
+} = commonSlice.actions;

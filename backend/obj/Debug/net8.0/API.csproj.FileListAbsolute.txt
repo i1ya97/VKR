@@ -295,3 +295,6 @@ C:\Users\ilya\Documents\GitHub\VKR\backend\obj\Debug\net8.0\API.genruntimeconfig
 C:\Users\ilya\Documents\GitHub\VKR\backend\obj\Debug\net8.0\ref\API.dll
 C:\Users\ilya\Documents\GitHub\VKR\backend\bin\Debug\net8.0\Appwrite.dll
 C:\Users\ilya\Documents\GitHub\VKR\backend\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\ilya\Documents\GitHub\VKR\backend\bin\Debug\net8.0\Quartz.dll
+C:\Users\ilya\Documents\GitHub\VKR\backend\bin\Debug\net8.0\Quartz.Extensions.DependencyInjection.dll
+C:\Users\ilya\Documents\GitHub\VKR\backend\bin\Debug\net8.0\Quartz.Extensions.Hosting.dll

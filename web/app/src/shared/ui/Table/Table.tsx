@@ -99,7 +99,7 @@ export default function Table(props: Props) {
       }
       return c;
     })
-  }, [])
+  }, [rows, columns, fixedColumns])
 
   const filterRows = useMemo(() => {
     let currentRows = filteringRowsByRules(rows, filterOption, getValue);

@@ -1,15 +1,15 @@
 import { TableColumn } from "@shared/ui/Table/models";
 
 export const columns: TableColumn[] = [    {
-    id: 'dueDate',
+    id: 'due_date',
     label: 'Дата выполнения',
     width: 200
 },{
-    id: 'startDate',
+    id: 'start_date',
     label: 'Данные загружены с',
     width: 200
 }, {
-    id: 'endDate',
+    id: 'end_date',
     label: 'Данные загружены по',
     width: 200,
 }, {
@@ -28,46 +28,3 @@ export const columns: TableColumn[] = [    {
     type: 'string',
     width: 260
 }];
-
-export const logs: Record<string, string>[] = [
-    {
-        id: '4',
-        name: '4',
-        dueDate: '11.01.2025 13:00',
-        startDate: '10.10.2024',
-        endDate: '11.01.2025',
-        type: 'analytics/data',
-        status: 'success',
-        comment: '',
-    },
-    {
-        id: '3',
-        name: '3',
-        dueDate: '10.01.2025 13:00',
-        startDate: '09.10.2024',
-        endDate: '10.01.2025',
-        type: 'analytics/data',
-        status: 'success',
-        comment: '',
-    },
-    {
-        id: '2',
-        name: '2',
-        dueDate: '09.01.2025 13:00',
-        startDate: '09.10.2024',
-        endDate: '09.01.2025',
-        type: 'analytics/data',
-        status: 'success',
-        comment: '',
-    },
-    {
-        id: '1',
-        name: '1',
-        dueDate: '09.01.2025 12:00',
-        startDate: '-',
-        endDate: '-',
-        type: 'product/list',
-        status: 'success',
-        comment: '',
-    },
-];

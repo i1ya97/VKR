@@ -1,15 +1,15 @@
 [
   {
-    "ContainingType": "backend.Controllers.WeatherForecastController",
-    "Method": "GetWeatherForecasts",
-    "RelativePath": "WeatherForecast",
+    "ContainingType": "Api.Controllers.LogsController",
+    "Method": "GetLogs",
+    "RelativePath": "Logs",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[API.WeatherForecast, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[API.Entity.Log, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -20,22 +20,67 @@
     ]
   },
   {
-    "ContainingType": "backend.Controllers.WeatherForecastController",
-    "Method": "PostStudent",
-    "RelativePath": "WeatherForecast",
+    "ContainingType": "Api.Controllers.ProductsController",
+    "Method": "GetProducts",
+    "RelativePath": "Products",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[API.Entity.Product, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Api.Controllers.ProductsController",
+    "Method": "PostProducts",
+    "RelativePath": "Products/add-products",
     "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Api.Controllers.ResiduesController",
+    "Method": "GetResidues",
+    "RelativePath": "Residues",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "student",
-        "Type": "API.WeatherForecast",
-        "IsRequired": true
+        "Name": "startDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "endDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Guid",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[API.Entity.Residue, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

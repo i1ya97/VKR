@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using API;
 using API.helpers;
-using Appwrite;
 using Microsoft.OpenApi.Models;
+using Quartz;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,10 +10,20 @@ string? connection = builder.Configuration.GetConnectionString("DefaultConnectio
 
 builder.Services.AddDbContextPool<ApplicationContext>(opt => opt.UseNpgsql(connection));
 
-// Add services to the container.
+builder.Services.AddQuartz(q =>
+{
+    var jobKey = new JobKey("OzonApiJob");
+    q.AddJob<OzonApiJob>(opts => opts.WithIdentity(jobKey));
+
+    q.AddTrigger(opts => opts
+        .ForJob(jobKey)
+        .WithIdentity("DailyTrigger")
+        .WithCronSchedule("0 0 0 * * ?"));
+});
+
+builder.Services.AddQuartzHostedService(q => q.WaitForJobsToComplete = true);
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen(c =>

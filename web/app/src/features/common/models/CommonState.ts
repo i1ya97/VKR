@@ -1,5 +1,4 @@
 import { Models } from 'appwrite';
-import { WeatherForecast } from './WeatherForecast';
 import { UserOptions } from './UserOptions';
 import { ApiCredentions } from './ApiCredentions';
 
@@ -8,4 +7,7 @@ export interface CommonState {
   theme: UserOptions<'dark' | 'light'>;
   openSideBar: UserOptions<boolean>;
   ozonApiCredentions: ApiCredentions | null;
+  uploadLogs: Record<string, string>[];
+  articles: Record<string, string>[];
+  residues: Record<string, string>[];
 }

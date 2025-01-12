@@ -2,17 +2,28 @@ import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import Table from '@shared/ui/Table';
-import { columns, products } from './constants';
+import { columns } from './constants';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import dayjs from 'dayjs';
 import TextField from '@mui/material/TextField';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useAppDispatch, useAppSelector } from '@shared/hooks';
+import { fetchResidues, selectResidues } from '@features/common';
 
 export const ResidueControl = () => {
 
   const [maxForecastFBO, setMaxForecastFBO] = useState<number>(120)
+
+  const dispatch = useAppDispatch();
+
+  const residues = useAppSelector(selectResidues);
+
+  useEffect(() => {
+    dispatch(fetchResidues());
+  }, [])
+
 
   const getValue = (row: Record<string, string>, key: string): { value: string; color?: string } => {
     const value = row[key];
@@ -24,7 +35,7 @@ export const ResidueControl = () => {
       }
       return { value: (+row.fbo / (+row.ordered / 14)).toFixed(3) }
     }
-    return { value };
+    return { value :value.toString() };
   }
 
 
@@ -51,7 +62,7 @@ export const ResidueControl = () => {
         />
       </Box>
       <Table
-        rows={products}
+        rows={residues}
         rowSize={50}
         columns={columns}
         getValue={getValue}

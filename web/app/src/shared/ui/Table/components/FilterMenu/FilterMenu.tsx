@@ -50,8 +50,6 @@ const FilterMenu = (props: Props) => {
   const key = anchorOrderMenu?.column.id ?? '';
   const isActiveFilter = !!filterOption?.[key]?.options?.length;
 
-  console.log(anchorOrderMenu?.column)
-
   useEffect(() => {
     const column = anchorOrderMenu?.column;
     if (column?.id) {

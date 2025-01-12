@@ -1,6 +1,6 @@
 import { Action, createAction } from '@reduxjs/toolkit';
 import { StateObservable, ofType } from 'redux-observable';
-import { Observable, forkJoin, map, mergeMap, of, switchMap } from 'rxjs';
+import { Observable, map, mergeMap, of, switchMap } from 'rxjs';
 
 import { ActionOut } from '@entities/store';
 import { AppWriteCollection, createDocument, getDocuments } from '@shared/api';

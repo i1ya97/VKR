@@ -5,10 +5,10 @@
     "version": "v1"
   },
   "paths": {
-    "/WeatherForecast": {
+    "/Logs": {
       "get": {
         "tags": [
-          "WeatherForecast"
+          "Logs"
         ],
         "responses": {
           "200": {
@@ -18,7 +18,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
+                    "$ref": "#/components/schemas/Log"
                   }
                 }
               },
@@ -26,7 +26,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
+                    "$ref": "#/components/schemas/Log"
                   }
                 }
               },
@@ -34,57 +34,131 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
+                    "$ref": "#/components/schemas/Log"
                   }
                 }
               }
             }
           }
         }
-      },
-      "post": {
+      }
+    },
+    "/Products": {
+      "get": {
         "tags": [
-          "WeatherForecast"
+          "Products"
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/WeatherForecast"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/WeatherForecast"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/WeatherForecast"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "OK",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "string",
-                  "format": "uuid"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Product"
+                  }
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "string",
-                  "format": "uuid"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Product"
+                  }
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "string",
-                  "format": "uuid"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Product"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Products/add-products": {
+      "post": {
+        "tags": [
+          "Products"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Residues": {
+      "get": {
+        "tags": [
+          "Residues"
+        ],
+        "parameters": [
+          {
+            "name": "startDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Residue"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Residue"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Residue"
+                  }
                 }
               }
             }
@@ -95,24 +169,177 @@
   },
   "components": {
     "schemas": {
-      "WeatherForecast": {
+      "Log": {
+        "required": [
+          "id",
+          "status",
+          "user_id"
+        ],
         "type": "object",
         "properties": {
           "id": {
             "type": "string",
             "format": "uuid"
           },
-          "date": {
+          "due_date": {
             "type": "string",
-            "format": "date"
+            "format": "date-time"
           },
-          "temperatureC": {
+          "start_date": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "end_date": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "comment": {
+            "type": "string",
+            "nullable": true
+          },
+          "user_id": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Product": {
+        "required": [
+          "currency_code",
+          "id",
+          "name",
+          "offer_id",
+          "sale_schema",
+          "user_id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "offer_id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "type_id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "old_price": {
+            "type": "number",
+            "format": "double"
+          },
+          "min_price": {
+            "type": "number",
+            "format": "double"
+          },
+          "price": {
+            "type": "number",
+            "format": "double"
+          },
+          "marketing_price": {
+            "type": "number",
+            "format": "double"
+          },
+          "currency_code": {
+            "type": "string",
+            "nullable": true
+          },
+          "sale_schema": {
+            "type": "string",
+            "nullable": true
+          },
+          "delivery_amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "return_amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "vat": {
+            "type": "number",
+            "format": "double"
+          },
+          "percent": {
+            "type": "number",
+            "format": "double"
+          },
+          "value": {
+            "type": "number",
+            "format": "double"
+          },
+          "volume_weight": {
+            "type": "number",
+            "format": "double"
+          },
+          "is_discounted": {
+            "type": "boolean"
+          },
+          "is_kgt": {
+            "type": "boolean"
+          },
+          "user_id": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Residue": {
+        "required": [
+          "fbo",
+          "fbs",
+          "name",
+          "offer_id",
+          "ordered",
+          "returns"
+        ],
+        "type": "object",
+        "properties": {
+          "offer_id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "fbo": {
             "type": "integer",
             "format": "int32"
           },
-          "summary": {
-            "type": "string",
-            "nullable": true
+          "fbs": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ordered": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "returns": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
