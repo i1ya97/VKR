@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\ilya\\Documents\\GitHub\\VKR\\backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|c:\\users\\ilya\\documents\\github\\vkr\\backend\\applicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|solutionrelative:applicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|c:\\users\\ilya\\documents\\github\\vkr\\backend\\migrations\\20250112112858_initialdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|solutionrelative:migrations\\20250112112858_initialdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|c:\\users\\ilya\\documents\\github\\vkr\\backend\\helpers\\ozonapijob.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|solutionrelative:helpers\\ozonapijob.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|c:\\users\\ilya\\documents\\github\\vkr\\backend\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|solutionrelative:controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,45 +14,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "20250112112858_InitialDB.cs",
-              "DocumentMoniker": "C:\\Users\\ilya\\Documents\\GitHub\\VKR\\backend\\Migrations\\20250112112858_InitialDB.cs",
-              "RelativeDocumentMoniker": "Migrations\\20250112112858_InitialDB.cs",
-              "ToolTip": "C:\\Users\\ilya\\Documents\\GitHub\\VKR\\backend\\Migrations\\20250112112858_InitialDB.cs",
-              "RelativeToolTip": "Migrations\\20250112112858_InitialDB.cs",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAgwB4AAABgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-12T15:27:03.171Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ApplicationContext.cs",
-              "DocumentMoniker": "C:\\Users\\ilya\\Documents\\GitHub\\VKR\\backend\\ApplicationContext.cs",
-              "RelativeDocumentMoniker": "ApplicationContext.cs",
-              "ToolTip": "C:\\Users\\ilya\\Documents\\GitHub\\VKR\\backend\\ApplicationContext.cs",
-              "RelativeToolTip": "ApplicationContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAYwBgAAAAAAAAAAAAAAA==",
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "C:\\Users\\ilya\\Documents\\GitHub\\VKR\\backend\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProductsController.cs",
+              "ToolTip": "C:\\Users\\ilya\\Documents\\GitHub\\VKR\\backend\\Controllers\\ProductsController.cs*",
+              "RelativeToolTip": "Controllers\\ProductsController.cs*",
+              "ViewState": "AgIAACQAAAAAAAAAAAAqwCoAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-12T15:18:47.638Z",
+              "WhenOpened": "2025-01-12T15:35:16.661Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "OzonApiJob.cs",
-              "DocumentMoniker": "C:\\Users\\ilya\\Documents\\GitHub\\VKR\\backend\\helpers\\OzonApiJob.cs",
-              "RelativeDocumentMoniker": "helpers\\OzonApiJob.cs",
-              "ToolTip": "C:\\Users\\ilya\\Documents\\GitHub\\VKR\\backend\\helpers\\OzonApiJob.cs",
-              "RelativeToolTip": "helpers\\OzonApiJob.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-12T14:55:49.537Z"
             }
           ]
         }

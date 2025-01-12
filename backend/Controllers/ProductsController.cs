@@ -50,7 +50,7 @@ public class ProductsController : ControllerBase
             {
                 new Product
                 {
-                    Id = 1,
+                    Id = 11,
                     Name = "Смартфон POCO C61 64 ГБ зеленый",
                     Offer_id = 210167440,
                     Type_id = 0,
@@ -73,7 +73,7 @@ public class ProductsController : ControllerBase
                 },
                 new Product
                 {
-                    Id = 2,
+                    Id = 12,
                     Name = "Ноутбук ASUS VivoBook 15",
                     Offer_id = 210167441,
                     Type_id = 0,
@@ -96,7 +96,7 @@ public class ProductsController : ControllerBase
                 },
                 new Product
                 {
-                    Id = 3,
+                    Id = 13,
                     Name = "Наушники Sony WH-1000XM4",
                     Offer_id = 205800162,
                     Type_id = 0,
@@ -119,7 +119,7 @@ public class ProductsController : ControllerBase
                 },
                 new Product
                 {
-                    Id = 4,
+                    Id = 14,
                     Name = "Планшет Samsung Galaxy Tab S7",
                     Offer_id = 209932822,
                     Type_id = 0,
@@ -142,7 +142,7 @@ public class ProductsController : ControllerBase
                 },
                 new Product
                 {
-                    Id = 5,
+                    Id = 15,
                     Name = "Фитнес-трекер Xiaomi Mi Band 6",
                     Offer_id = 210222824,
                     Type_id = 0,
@@ -165,7 +165,7 @@ public class ProductsController : ControllerBase
                 },
                 new Product
                 {
-                    Id = 6,
+                    Id = 16,
                     Name = "Кофемашина Philips 3200 Series",
                     Offer_id = 210222821,
                     Type_id = 0,
@@ -188,7 +188,7 @@ public class ProductsController : ControllerBase
                 },
                 new Product
                 {
-                    Id = 7,
+                    Id = 17,
                     Name = "Телевизор LG 55UN73006LA",
                     Offer_id = 210889494,
                     Type_id = 0,
@@ -211,7 +211,7 @@ public class ProductsController : ControllerBase
                 },
                 new Product
                 {
-                    Id = 8,
+                    Id = 18,
                     Name = "Смарт-часы Apple Watch Series 6",
                     Offer_id = 205800161,
                     Type_id = 0,
@@ -234,7 +234,7 @@ public class ProductsController : ControllerBase
                 },
                 new Product
                 {
-                    Id = 9,
+                    Id = 19,
                     Name = "Игровая консоль Sony PlayStation 5",
                     Offer_id = 205876161,
                     Type_id = 0,
@@ -257,7 +257,7 @@ public class ProductsController : ControllerBase
                 },
                 new Product
                 {
-                    Id = 10,
+                    Id = 20,
                     Name = "Электросамокат Xiaomi Mi Electric Scooter 1S",
                     Offer_id = 205800346,
                     Type_id = 0,
@@ -279,7 +279,7 @@ public class ProductsController : ControllerBase
                     User_id = user.Id
                 },
             };
-
+            _context.Products.AddRange(products);
             await _context.SaveChangesAsync();
 
             return Ok("Done");
