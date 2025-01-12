@@ -16,9 +16,4 @@ public class ApplicationContext: DbContext
 
     public ApplicationContext(DbContextOptions<ApplicationContext> options)
     : base(options) { }
-
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        modelBuilder.Entity<Product>().HasKey(u => new { u.Id, u.User_id });
-    }
 }
