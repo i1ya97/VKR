@@ -1,46 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ilya\\Documents\\GitHub\\VKR\\backend\\",
+  "WorkspaceRootPath": "C:\\Users\\ichusovlyanov\\Documents\\GitHub\\VKR\\backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ilya\\Documents\\GitHub\\VKR\\backend\\Migrations\\20250112155030_123.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20250112155030_123.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|c:\\users\\ilya\\documents\\github\\vkr\\backend\\applicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|solutionrelative:applicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|c:\\users\\ilya\\documents\\github\\vkr\\backend\\entity\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|solutionrelative:entity\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|c:\\users\\ilya\\documents\\github\\vkr\\backend\\entity\\analytic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|solutionrelative:entity\\analytic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|c:\\users\\ilya\\documents\\github\\vkr\\backend\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|c:\\users\\ichusovlyanov\\documents\\github\\vkr\\backend\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|solutionrelative:controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|c:\\users\\ilya\\documents\\github\\vkr\\backend\\helpers\\ozonapijob.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|solutionrelative:helpers\\ozonapijob.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|c:\\users\\ilya\\documents\\github\\vkr\\backend\\controllers\\logscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|solutionrelative:controllers\\logscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|c:\\users\\ilya\\documents\\github\\vkr\\backend\\controllers\\residuescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|c:\\users\\ichusovlyanov\\documents\\github\\vkr\\backend\\controllers\\residuescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|solutionrelative:controllers\\residuescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|c:\\users\\ilya\\documents\\github\\vkr\\backend\\entity\\residue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|solutionrelative:entity\\residue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|c:\\users\\ichusovlyanov\\documents\\github\\vkr\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|c:\\users\\ilya\\documents\\github\\vkr\\backend\\entity\\log.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|solutionrelative:entity\\log.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|c:\\users\\ichusovlyanov\\documents\\github\\vkr\\backend\\entity\\stock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|solutionrelative:entity\\stock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|c:\\users\\ichusovlyanov\\documents\\github\\vkr\\backend\\entity\\residue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|solutionrelative:entity\\residue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,134 +30,69 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "20250112155030_123.cs",
-              "DocumentMoniker": "C:\\Users\\ilya\\Documents\\GitHub\\VKR\\backend\\Migrations\\20250112155030_123.cs",
-              "RelativeDocumentMoniker": "Migrations\\20250112155030_123.cs",
-              "ToolTip": "C:\\Users\\ilya\\Documents\\GitHub\\VKR\\backend\\Migrations\\20250112155030_123.cs",
-              "RelativeToolTip": "Migrations\\20250112155030_123.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-12T15:50:30.941Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Analytic.cs",
-              "DocumentMoniker": "C:\\Users\\ilya\\Documents\\GitHub\\VKR\\backend\\Entity\\Analytic.cs",
-              "RelativeDocumentMoniker": "Entity\\Analytic.cs",
-              "ToolTip": "C:\\Users\\ilya\\Documents\\GitHub\\VKR\\backend\\Entity\\Analytic.cs",
-              "RelativeToolTip": "Entity\\Analytic.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-12T15:46:59.067Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "OzonApiJob.cs",
-              "DocumentMoniker": "C:\\Users\\ilya\\Documents\\GitHub\\VKR\\backend\\helpers\\OzonApiJob.cs",
-              "RelativeDocumentMoniker": "helpers\\OzonApiJob.cs",
-              "ToolTip": "C:\\Users\\ilya\\Documents\\GitHub\\VKR\\backend\\helpers\\OzonApiJob.cs",
-              "RelativeToolTip": "helpers\\OzonApiJob.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-12T15:46:06.726Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "LogsController.cs",
-              "DocumentMoniker": "C:\\Users\\ilya\\Documents\\GitHub\\VKR\\backend\\Controllers\\LogsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\LogsController.cs",
-              "ToolTip": "C:\\Users\\ilya\\Documents\\GitHub\\VKR\\backend\\Controllers\\LogsController.cs",
-              "RelativeToolTip": "Controllers\\LogsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-12T15:46:03.947Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ResiduesController.cs",
-              "DocumentMoniker": "C:\\Users\\ilya\\Documents\\GitHub\\VKR\\backend\\Controllers\\ResiduesController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ResiduesController.cs",
-              "ToolTip": "C:\\Users\\ilya\\Documents\\GitHub\\VKR\\backend\\Controllers\\ResiduesController.cs",
-              "RelativeToolTip": "Controllers\\ResiduesController.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-12T15:45:58.952Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ApplicationContext.cs",
-              "DocumentMoniker": "C:\\Users\\ilya\\Documents\\GitHub\\VKR\\backend\\ApplicationContext.cs",
-              "RelativeDocumentMoniker": "ApplicationContext.cs",
-              "ToolTip": "C:\\Users\\ilya\\Documents\\GitHub\\VKR\\backend\\ApplicationContext.cs",
-              "RelativeToolTip": "ApplicationContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAXAAAAAAAAAA==",
+              "Title": "ResiduesController.cs",
+              "DocumentMoniker": "C:\\Users\\ichusovlyanov\\Documents\\GitHub\\VKR\\backend\\Controllers\\ResiduesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ResiduesController.cs",
+              "ToolTip": "C:\\Users\\ichusovlyanov\\Documents\\GitHub\\VKR\\backend\\Controllers\\ResiduesController.cs",
+              "RelativeToolTip": "Controllers\\ResiduesController.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAuwEEAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-12T15:45:16.683Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Log.cs",
-              "DocumentMoniker": "C:\\Users\\ilya\\Documents\\GitHub\\VKR\\backend\\Entity\\Log.cs",
-              "RelativeDocumentMoniker": "Entity\\Log.cs",
-              "ToolTip": "C:\\Users\\ilya\\Documents\\GitHub\\VKR\\backend\\Entity\\Log.cs",
-              "RelativeToolTip": "Entity\\Log.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-12T15:44:57.029Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Residue.cs",
-              "DocumentMoniker": "C:\\Users\\ilya\\Documents\\GitHub\\VKR\\backend\\Entity\\Residue.cs",
-              "RelativeDocumentMoniker": "Entity\\Residue.cs",
-              "ToolTip": "C:\\Users\\ilya\\Documents\\GitHub\\VKR\\backend\\Entity\\Residue.cs",
-              "RelativeToolTip": "Entity\\Residue.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-12T15:44:54.681Z",
+              "WhenOpened": "2025-01-14T11:59:46.543Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Product.cs",
-              "DocumentMoniker": "C:\\Users\\ilya\\Documents\\GitHub\\VKR\\backend\\Entity\\Product.cs",
-              "RelativeDocumentMoniker": "Entity\\Product.cs",
-              "ToolTip": "C:\\Users\\ilya\\Documents\\GitHub\\VKR\\backend\\Entity\\Product.cs",
-              "RelativeToolTip": "Entity\\Product.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ichusovlyanov\\Documents\\GitHub\\VKR\\backend\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\ichusovlyanov\\Documents\\GitHub\\VKR\\backend\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAADgAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-12T15:44:52.688Z",
+              "WhenOpened": "2025-01-14T10:45:11.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Stock.cs",
+              "DocumentMoniker": "C:\\Users\\ichusovlyanov\\Documents\\GitHub\\VKR\\backend\\Entity\\Stock.cs",
+              "RelativeDocumentMoniker": "Entity\\Stock.cs",
+              "ToolTip": "C:\\Users\\ichusovlyanov\\Documents\\GitHub\\VKR\\backend\\Entity\\Stock.cs",
+              "RelativeToolTip": "Entity\\Stock.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-14T10:42:45.83Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "Residue.cs",
+              "DocumentMoniker": "C:\\Users\\ichusovlyanov\\Documents\\GitHub\\VKR\\backend\\Entity\\Residue.cs",
+              "RelativeDocumentMoniker": "Entity\\Residue.cs",
+              "ToolTip": "C:\\Users\\ichusovlyanov\\Documents\\GitHub\\VKR\\backend\\Entity\\Residue.cs",
+              "RelativeToolTip": "Entity\\Residue.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-14T10:42:37.567Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "ProductsController.cs",
-              "DocumentMoniker": "C:\\Users\\ilya\\Documents\\GitHub\\VKR\\backend\\Controllers\\ProductsController.cs",
+              "DocumentMoniker": "C:\\Users\\ichusovlyanov\\Documents\\GitHub\\VKR\\backend\\Controllers\\ProductsController.cs",
               "RelativeDocumentMoniker": "Controllers\\ProductsController.cs",
-              "ToolTip": "C:\\Users\\ilya\\Documents\\GitHub\\VKR\\backend\\Controllers\\ProductsController.cs",
+              "ToolTip": "C:\\Users\\ichusovlyanov\\Documents\\GitHub\\VKR\\backend\\Controllers\\ProductsController.cs",
               "RelativeToolTip": "Controllers\\ProductsController.cs",
-              "ViewState": "AgIAAP4AAAAAAAAAAAAwwBkBAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAADkCAAAAAAAAAAA7wG4BAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-12T15:35:16.661Z",
               "EditorCaption": ""

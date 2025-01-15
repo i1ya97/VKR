@@ -13,8 +13,7 @@ import { useAppDispatch, useAppSelector } from '@shared/hooks';
 import { fetchResidues, selectResidues } from '@features/common';
 
 export const ResidueControl = () => {
-
-  const [maxForecastFBO, setMaxForecastFBO] = useState<number>(120)
+  const [maxForecastFBO, setMaxForecastFBO] = useState<number>(120);
 
   const dispatch = useAppDispatch();
 
@@ -22,31 +21,29 @@ export const ResidueControl = () => {
 
   useEffect(() => {
     dispatch(fetchResidues());
-  }, [])
-
+  }, []);
 
   const getValue = (row: Record<string, string>, key: string): { value: string; color?: string } => {
     const value = row[key];
-    if (key === 'averageOrder') return { value: (+row.ordered / 14).toFixed(3) }
+    if (key === 'averageOrder') return { value: (+row.ordered / 14).toFixed(3) };
     if (key === 'turnoverForecastFBO') {
       const turnoverForecastFBO = +row.fbo / (+row.ordered / 14);
       if (turnoverForecastFBO > maxForecastFBO) {
-        return { value: turnoverForecastFBO.toFixed(3), color: 'red' }
+        return { value: turnoverForecastFBO.toFixed(3), color: 'red' };
       }
-      return { value: (+row.fbo / (+row.ordered / 14)).toFixed(3) }
+      return { value: (+row.fbo / (+row.ordered / 14)).toFixed(3) };
     }
-    return { value :value.toString() };
-  }
-
+    return { value: value.toString() };
+  };
 
   return (
-    <Box sx={{ margin: '24px', gap: '16px', display: 'flex', flexDirection: 'column' }}>
+    <Box sx={{ margin: '24px', gap: '16px', display: 'flex', flexDirection: 'column', height: 'calc(100% - 40px)' }}>
       <Typography variant="h4">Контроля остатков</Typography>
       <Divider />
       <Box sx={{ display: 'flex', gap: '16px', justifyContent: 'space-between' }}>
         <Box sx={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
           <Typography>Укажите период:</Typography>
-          <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale='ru'>
+          <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="ru">
             <DatePicker slotProps={{ textField: { size: 'small' } }} value={dayjs.utc().add(-14, 'day')} disabled />
             —
             <DatePicker slotProps={{ textField: { size: 'small' } }} value={dayjs.utc()} disabled />
@@ -54,19 +51,14 @@ export const ResidueControl = () => {
         </Box>
         <TextField
           size="small"
-          type='number'
+          type="number"
           value={maxForecastFBO}
           onChange={(e) => setMaxForecastFBO(+e.target.value)}
           label="Допустимая оборачиваемость"
           variant="outlined"
         />
       </Box>
-      <Table
-        rows={residues}
-        rowSize={50}
-        columns={columns}
-        getValue={getValue}
-      />
+      <Table rows={residues} rowSize={50} columns={columns} getValue={getValue} />
     </Box>
   );
 };

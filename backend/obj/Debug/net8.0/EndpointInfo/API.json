@@ -88,24 +88,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
@@ -220,7 +203,6 @@
           "id",
           "name",
           "offer_id",
-          "sale_schema",
           "user_id"
         ],
         "type": "object",
@@ -234,8 +216,8 @@
             "nullable": true
           },
           "offer_id": {
-            "type": "integer",
-            "format": "int64"
+            "type": "string",
+            "nullable": true
           },
           "type_id": {
             "type": "integer",
@@ -262,10 +244,6 @@
             "format": "double"
           },
           "currency_code": {
-            "type": "string",
-            "nullable": true
-          },
-          "sale_schema": {
             "type": "string",
             "nullable": true
           },
@@ -318,8 +296,8 @@
         "type": "object",
         "properties": {
           "offer_id": {
-            "type": "integer",
-            "format": "int64"
+            "type": "string",
+            "nullable": true
           },
           "name": {
             "type": "string",
@@ -348,7 +326,7 @@
     "securitySchemes": {
       "Bearer": {
         "type": "apiKey",
-        "description": "Введите ваш токен",
+        "description": "Введите токен",
         "name": "Authorization",
         "in": "header"
       }
