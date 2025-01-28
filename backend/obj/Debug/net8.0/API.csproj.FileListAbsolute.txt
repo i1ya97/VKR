@@ -298,3 +298,9 @@ C:\Users\ilya\Documents\GitHub\VKR\backend\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\ilya\Documents\GitHub\VKR\backend\bin\Debug\net8.0\Quartz.dll
 C:\Users\ilya\Documents\GitHub\VKR\backend\bin\Debug\net8.0\Quartz.Extensions.DependencyInjection.dll
 C:\Users\ilya\Documents\GitHub\VKR\backend\bin\Debug\net8.0\Quartz.Extensions.Hosting.dll
+C:\Users\ichusovlyanov\Documents\GitHub\VKR\backend\bin\Debug\net8.0\libman.json
+C:\Users\ichusovlyanov\Documents\GitHub\VKR\backend\bin\Debug\net8.0\Appwrite.dll
+C:\Users\ichusovlyanov\Documents\GitHub\VKR\backend\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\ichusovlyanov\Documents\GitHub\VKR\backend\bin\Debug\net8.0\Quartz.dll
+C:\Users\ichusovlyanov\Documents\GitHub\VKR\backend\bin\Debug\net8.0\Quartz.Extensions.DependencyInjection.dll
+C:\Users\ichusovlyanov\Documents\GitHub\VKR\backend\bin\Debug\net8.0\Quartz.Extensions.Hosting.dll

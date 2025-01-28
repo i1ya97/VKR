@@ -34,33 +34,50 @@ public class ResiduesController : ControllerBase
                                 .Where(a => a.Date >= startDate && a.Date <= endDate)
                                 .ToListAsync();
 
-            var residues = products.Select(product =>
+            try
             {
-
-                var fboStock = stocks.FirstOrDefault(stock => stock.Sku.Id == product.Id && stock.Type == "FBO");
-                var fbsStock = stocks.FirstOrDefault(stock => stock.Sku.Id == product.Id && stock.Type == "FBS");
-
-                var orderedUnits = analytics
-                    .Where(a => a.Sku.Id == product.Id)
-                    .Sum(a => a.Ordered_units);
-
-                var totalReturns = analytics
-                    .Where(a => a.Sku.Id == product.Id)
-                    .Sum(a => a.Returns);
-
-                return new Residue
+                var residues = products.Select(product =>
                 {
-                    Offer_id = product.Offer_id,
-                    Name = product.Name,
-                    Fbo = fboStock?.Present ?? 0,
-                    Fbs = fbsStock?.Present ?? 0,
-                    Ordered = orderedUnits,
-                    Returns = totalReturns
-                };
-            }).ToList();
+                    // Пытаемся найти остатки по типу FBO, если не найдено – значение по умолчанию 0
+                    var fboStock = stocks.FirstOrDefault(stock => stock.Sku != null
+                                                               && stock.Sku.Id == product.Id
+                                                               && stock.Type != null
+                                                               && stock.Type.Equals("FBO", StringComparison.OrdinalIgnoreCase));
+
+                    // Пытаемся найти остатки по типу FBS, если не найдено – значение по умолчанию 0
+                    var fbsStock = stocks.FirstOrDefault(stock => stock.Sku != null
+                                                               && stock.Sku.Id == product.Id
+                                                               && stock.Type != null
+                                                               && stock.Type.Equals("FBS", StringComparison.OrdinalIgnoreCase));
+
+                    var orderedUnits = analytics != null
+                        ? analytics.Where(a => a.Sku != null && a.Sku.Id == product.Id)
+                                   .Sum(a => a.Ordered_units)
+                        : 0;
+
+                    var totalReturns = analytics != null
+                        ? analytics.Where(a => a.Sku != null && a.Sku.Id == product.Id)
+                                   .Sum(a => a.Returns)
+                        : 0;
+
+                    return new Residue
+                    {
+                        Offer_id = product.Offer_id,
+                        Name = product.Name,
+                        Fbo = fboStock?.Present ?? 0,
+                        Fbs = fbsStock?.Present ?? 0,
+                        Ordered = orderedUnits,
+                        Returns = totalReturns
+                    };
+                }).ToList();
 
 
-            return Ok(residues);
+                return Ok(residues);
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Произошла ошибка при обработке остатков товаров.", ex);
+            }
         }
         else
         {

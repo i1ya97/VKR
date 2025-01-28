@@ -32,7 +32,7 @@ builder.Services.AddSwaggerGen(c =>
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         In = ParameterLocation.Header,
-        Description = "Введите ваш токен",
+        Description = "Р’РІРµРґРёС‚Рµ С‚РѕРєРµРЅ",
         Name = "Authorization",
         Type = SecuritySchemeType.ApiKey
     });

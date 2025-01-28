@@ -2,7 +2,7 @@
 {
     public class Residue
     {
-        public required long Offer_id { get; set; }
+        public required string Offer_id { get; set; }
 
         public required string Name { get; set; }
 

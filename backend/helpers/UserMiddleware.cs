@@ -1,25 +1,24 @@
 ﻿using Appwrite;
 using Appwrite.Models;
 using Appwrite.Services;
-using Microsoft.AspNetCore.Http;
-using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
-using System.Security.Principal;
-using System.Threading.Tasks;
 
 namespace API.helpers
 {
     public class UserMiddleware
     {
         private readonly RequestDelegate _next;
+        private readonly IConfiguration _configuration;
 
-        public UserMiddleware(RequestDelegate next)
+        public UserMiddleware(RequestDelegate next, IConfiguration configuration)
         {
             _next = next;
+            _configuration = configuration;
         }
 
         public async Task InvokeAsync(HttpContext context)
         {
+            var URL = _configuration.GetSection("Appwrite").GetValue<string>("URL") ?? "";
+            var Project = _configuration.GetSection("Appwrite").GetValue<string>("Project") ?? "";
             var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
 
             if (string.IsNullOrEmpty(token))
@@ -31,8 +30,8 @@ namespace API.helpers
 
             try
             {
-                Client client = new Client().SetEndpoint("http://51.250.32.125:17600/v1")
-                .SetProject("6777b84800366212389d").SetJWT(token);
+                Client client = new Client().SetEndpoint(URL)
+                .SetProject(Project).SetJWT(token);
 
                 User user = new Account(client).Get().Result;
 
