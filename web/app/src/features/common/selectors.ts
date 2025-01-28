@@ -13,3 +13,7 @@ export const selectUploadLogs = (state: RootState) => commonModule(state).upload
 export const selectArticles = (state: RootState) => commonModule(state).articles;
 
 export const selectResidues = (state: RootState) => commonModule(state).residues;
+
+export const selectDateStart = (state: RootState) => commonModule(state).dateStart;
+
+export const selectDateEnd = (state: RootState) => commonModule(state).dateEnd;

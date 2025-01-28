@@ -4,15 +4,28 @@ import { CommonState } from './models/CommonState';
 import { Models } from 'appwrite';
 import { UserOptions } from './models/UserOptions';
 import { ApiCredentions } from './models/ApiCredentions';
+import { TableData } from './models/TableData';
+import dayjs from 'dayjs';
 
 const initState: CommonState = {
   user: null,
   theme: { id: '', value: 'light' },
   openSideBar: { id: '', value: true },
   ozonApiCredentions: null,
-  uploadLogs: [],
-  articles: [],
-  residues: [],
+  dateStart: null,
+  dateEnd: null,
+  uploadLogs: {
+    loading: true,
+    rows: [],
+  },
+  articles: {
+    loading: true,
+    rows: [],
+  },
+  residues: {
+    loading: true,
+    rows: [],
+  },
 };
 
 export const commonSlice = createSlice({
@@ -32,13 +45,19 @@ export const commonSlice = createSlice({
       state.theme = payload.activeTheme;
       state.openSideBar = payload.openSideBar;
     },
-    setUploadLogs: (state, { payload }: PayloadAction<Record<string, string>[]>) => {
+    setUploadLogs: (state, { payload }: PayloadAction<TableData>) => {
       state.uploadLogs = payload;
     },
-    setArticles: (state, { payload }: PayloadAction<Record<string, string>[]>) => {
+    setDateStart: (state, { payload }: PayloadAction<dayjs.Dayjs| null>) => {
+      state.dateStart = payload;
+    },
+    setDateEnd: (state, { payload }: PayloadAction<dayjs.Dayjs| null>) => {
+      state.dateEnd = payload;
+    },
+    setArticles: (state, { payload }: PayloadAction<TableData>) => {
       state.articles = payload;
     },
-    setResidues: (state, { payload }: PayloadAction<Record<string, string>[]>) => {
+    setResidues: (state, { payload }: PayloadAction<TableData>) => {
       state.residues = payload;
     },
     setOzonApiCredentions: (state, { payload }: PayloadAction<ApiCredentions>) => {
@@ -51,5 +70,6 @@ export const commonSlice = createSlice({
 });
 
 export const { 
-  setUser, setTheme, setUserOptions, setOpenSideBar,setOzonApiCredentions, setUploadLogs, setArticles, setResidues
+  setUser, setTheme, setUserOptions, setOpenSideBar,setOzonApiCredentions, 
+  setUploadLogs, setArticles, setResidues, setDateStart, setDateEnd
 } = commonSlice.actions;

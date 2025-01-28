@@ -20,7 +20,7 @@ export const fetchUploadLogsEpic = (action$: Observable<Action>, state$: StateOb
       );
     }),
     map((result) => {
-      return setUploadLogs(result) as ActionOut;
+      return setUploadLogs({rows: result, loading: false}) as ActionOut;
     }),
   );
 };

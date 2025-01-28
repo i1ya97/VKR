@@ -20,7 +20,7 @@ export const fetchArticlesEpic = (action$: Observable<Action>, state$: StateObse
       );
     }),
     map((result) => {
-      return setArticles(result) as ActionOut;
+      return setArticles({rows: result, loading: false}) as ActionOut;
     }),
   );
 };
