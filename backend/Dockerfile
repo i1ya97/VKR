@@ -7,6 +7,11 @@ WORKDIR /app
 EXPOSE 8080
 EXPOSE 8081
 
+RUN apt-get update && \
+    apt-get install -y libmkl-dev libmkl-intel-lp64 libmkl-gnu-thread libmkl-core libomp5 && \
+    rm -rf /var/lib/apt/lists/*  # Clean up
+
+USER $APP_UID  # Revert to non-root user
 
 # Этот этап используется для сборки проекта службы
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
@@ -27,4 +32,5 @@ RUN dotnet publish "./API.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:Use
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+
 ENTRYPOINT ["dotnet", "API.dll"]

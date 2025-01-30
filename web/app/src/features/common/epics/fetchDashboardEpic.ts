@@ -66,7 +66,7 @@ export const fetchDashboardEpic = (action$: Observable<Action>, state$: StateObs
         data[formattedKey] = value;
         barsInfo[formattedKey] = {
           alias: formattedKey,
-          color: generateRandomHexColor(index)
+          color:`#${generateRandomHexColor(index)}`
         };
       });
 
