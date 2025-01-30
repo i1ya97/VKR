@@ -8,6 +8,7 @@ import { TimeSeries } from '@widgets/Forecasting/ui/ForecastingChart/utils/findM
 import { BarInfo } from '@shared/charts';
 import { ActionOut } from '@entities/store';
 import { HistogramData } from '@shared/charts/models/HistogramData';
+import { generateRandomHexColor } from '@shared/utils/generateRandomHexColor';
 
 export const fetchDashboardEpic = (action$: Observable<Action>, state$: StateObservable<RootState>) => {
   return action$.pipe(
@@ -56,7 +57,7 @@ export const fetchDashboardEpic = (action$: Observable<Action>, state$: StateObs
         dashboardDateStart.add(index, 'day')
       );
 
-      dateRange.forEach((date) => {
+      dateRange.forEach((date, index) => {
         const formattedKey = date.format('DD.MM.YYYY');
         const isoKey = date.format('YYYY-MM-DDTHH:mm:ss[Z]');
 
@@ -65,7 +66,7 @@ export const fetchDashboardEpic = (action$: Observable<Action>, state$: StateObs
         data[formattedKey] = value;
         barsInfo[formattedKey] = {
           alias: formattedKey,
-          color: 'red'
+          color: generateRandomHexColor(index)
         };
       });
 
