@@ -30,10 +30,7 @@ export const Articles = () => {
   };
 
   const updateArticles = () => {
-    from(request<Record<string, string>[]>(ApiMethods.POST, `/api`, `/TimeSeries/getPredictions`, {
-      productIds: ['9'],
-      curves: ['ordered_units']
-    })).subscribe(() => {
+    from(request<Record<string, string>[]>(ApiMethods.POST, `/api`, `/Products/add-products`)).subscribe(() => {
       dispatch(fetchArticles());
     });
   };
