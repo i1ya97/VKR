@@ -7,16 +7,16 @@ WORKDIR /app
 EXPOSE 8080
 EXPOSE 8081
 
-# Install dependencies for ML.NET
-RUN apt-get update --fix-missing && \
-    apt-get install -y wget gnupg2 && \
+# Устанавливаем зависимости для ML.NET
+RUN apt-get update && \
+    apt-get install -y wget curl gnupg2 && \
     wget -qO- https://packages.microsoft.com/keys/microsoft.asc | apt-key add - && \
     echo "deb [arch=amd64] https://packages.microsoft.com/debian/11/prod bullseye main" | tee /etc/apt/sources.list.d/microsoft.list && \
     apt-get update && \
     apt-get install -y libmkl-dev libmkl-intel-lp64 libmkl-gnu-thread libmkl-core libgomp1 && \
-    rm -rf /var/lib/apt/lists/*  # Clean up
+    rm -rf /var/lib/apt/lists/*
 
-USER $APP_UID  # Revert to non-root user
+USER $APP_UID
 
 # Этот этап используется для сборки проекта службы
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
