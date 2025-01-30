@@ -54,6 +54,10 @@
               "target": "Package",
               "version": "[0.10.1, )"
             },
+            "MKL.NET.linux-x64": {
+              "target": "Package",
+              "version": "[2022.0.1.117, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[8.0.11, )"

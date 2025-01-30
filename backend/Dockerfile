@@ -2,21 +2,11 @@
 
 # Этот этап используется при запуске из VS в быстром режиме (по умолчанию для конфигурации отладки)
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
-USER root  # Переключаемся на root
+USER $APP_UID
 WORKDIR /app
 EXPOSE 8080
 EXPOSE 8081
 
-# Устанавливаем зависимости для ML.NET
-RUN apt-get update && \
-    apt-get install -y wget curl gnupg2 && \
-    wget -qO- https://packages.microsoft.com/keys/microsoft.asc | apt-key add - && \
-    echo "deb [arch=amd64] https://packages.microsoft.com/debian/11/prod bullseye main" | tee /etc/apt/sources.list.d/microsoft.list && \
-    apt-get update && \
-    apt-get install -y libmkl-dev libmkl-intel-lp64 libmkl-gnu-thread libmkl-core libgomp1 && \
-    rm -rf /var/lib/apt/lists/*
-
-USER $APP_UID
 
 # Этот этап используется для сборки проекта службы
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
@@ -37,5 +27,4 @@ RUN dotnet publish "./API.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:Use
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-
 ENTRYPOINT ["dotnet", "API.dll"]

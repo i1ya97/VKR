@@ -1148,6 +1148,207 @@
           "build/Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets": {}
         }
       },
+      "MKL.NET.linux-x64/2022.0.1.117": {
+        "type": "package",
+        "dependencies": {
+          "MKL.NET.linux-x64.b": "2022.0.1.117"
+        },
+        "runtimeTargets": {
+          "runtimes/linux-x64/native/libiomp5.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libiomp5_db.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libiompstubs5.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libmkl_avx2.so.2": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libmkl_blacs_intelmpi_ilp64.so.2": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libmkl_blacs_intelmpi_lp64.so.2": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libmkl_blacs_openmpi_ilp64.so.2": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libmkl_blacs_openmpi_lp64.so.2": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libmkl_cdft_core.so.2": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libmkl_def.so.2": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libmkl_gf_ilp64.so.2": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libmkl_gf_lp64.so.2": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libmkl_gnu_thread.so.2": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libmkl_intel_ilp64.so.2": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libmkl_intel_lp64.so.2": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libmkl_mc.so.2": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libmkl_pgi_thread.so.2": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libmkl_rt.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libmkl_scalapack_ilp64.so.2": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libmkl_scalapack_lp64.so.2": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libmkl_sequential.so.2": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libmkl_tbb_thread.so.2": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libmkl_vml_avx.so.2": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libmkl_vml_avx2.so.2": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libmkl_vml_avx512.so.2": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libmkl_vml_cmpt.so.2": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libmkl_vml_def.so.2": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libmkl_vml_mc.so.2": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libmkl_vml_mc2.so.2": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libmkl_vml_mc3.so.2": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libtbb.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libtbb_debug.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libtbbbind.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libtbbbind_2_0.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libtbbbind_2_0_debug.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libtbbbind_2_5.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libtbbbind_2_5_debug.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libtbbbind_debug.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libtbbmalloc.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libtbbmalloc_debug.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libtbbmalloc_proxy.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libtbbmalloc_proxy_debug.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          }
+        }
+      },
+      "MKL.NET.linux-x64.b/2022.0.1.117": {
+        "type": "package",
+        "runtimeTargets": {
+          "runtimes/linux-x64/native/libmkl_avx.so.2": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libmkl_avx512.so.2": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libmkl_core.so.2": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libmkl_intel_thread.so.2": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libmkl_mc3.so.2": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          }
+        }
+      },
       "Mono.TextTemplating/3.0.0": {
         "type": "package",
         "dependencies": {
@@ -4616,6 +4817,81 @@
         "tools/zh-Hant/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll"
       ]
     },
+    "MKL.NET.linux-x64/2022.0.1.117": {
+      "sha512": "NYCbgVtckauf5irmkFgdBycYff2rW5oNtXsXhVvgdWzh7Z/er0Z11qtrKKZyLZEdmLhud3nFkbgtwSRNnUEqAw==",
+      "type": "package",
+      "path": "mkl.net.linux-x64/2022.0.1.117",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "matrix.png",
+        "mkl.net.linux-x64.2022.0.1.117.nupkg.sha512",
+        "mkl.net.linux-x64.nuspec",
+        "runtimes/linux-x64/native/libiomp5.so",
+        "runtimes/linux-x64/native/libiomp5_db.so",
+        "runtimes/linux-x64/native/libiompstubs5.so",
+        "runtimes/linux-x64/native/libmkl_avx2.so.2",
+        "runtimes/linux-x64/native/libmkl_blacs_intelmpi_ilp64.so.2",
+        "runtimes/linux-x64/native/libmkl_blacs_intelmpi_lp64.so.2",
+        "runtimes/linux-x64/native/libmkl_blacs_openmpi_ilp64.so.2",
+        "runtimes/linux-x64/native/libmkl_blacs_openmpi_lp64.so.2",
+        "runtimes/linux-x64/native/libmkl_cdft_core.so.2",
+        "runtimes/linux-x64/native/libmkl_def.so.2",
+        "runtimes/linux-x64/native/libmkl_gf_ilp64.so.2",
+        "runtimes/linux-x64/native/libmkl_gf_lp64.so.2",
+        "runtimes/linux-x64/native/libmkl_gnu_thread.so.2",
+        "runtimes/linux-x64/native/libmkl_intel_ilp64.so.2",
+        "runtimes/linux-x64/native/libmkl_intel_lp64.so.2",
+        "runtimes/linux-x64/native/libmkl_mc.so.2",
+        "runtimes/linux-x64/native/libmkl_pgi_thread.so.2",
+        "runtimes/linux-x64/native/libmkl_rt.so",
+        "runtimes/linux-x64/native/libmkl_scalapack_ilp64.so.2",
+        "runtimes/linux-x64/native/libmkl_scalapack_lp64.so.2",
+        "runtimes/linux-x64/native/libmkl_sequential.so.2",
+        "runtimes/linux-x64/native/libmkl_tbb_thread.so.2",
+        "runtimes/linux-x64/native/libmkl_vml_avx.so.2",
+        "runtimes/linux-x64/native/libmkl_vml_avx2.so.2",
+        "runtimes/linux-x64/native/libmkl_vml_avx512.so.2",
+        "runtimes/linux-x64/native/libmkl_vml_cmpt.so.2",
+        "runtimes/linux-x64/native/libmkl_vml_def.so.2",
+        "runtimes/linux-x64/native/libmkl_vml_mc.so.2",
+        "runtimes/linux-x64/native/libmkl_vml_mc2.so.2",
+        "runtimes/linux-x64/native/libmkl_vml_mc3.so.2",
+        "runtimes/linux-x64/native/libtbb.so",
+        "runtimes/linux-x64/native/libtbb_debug.so",
+        "runtimes/linux-x64/native/libtbbbind.so",
+        "runtimes/linux-x64/native/libtbbbind_2_0.so",
+        "runtimes/linux-x64/native/libtbbbind_2_0_debug.so",
+        "runtimes/linux-x64/native/libtbbbind_2_5.so",
+        "runtimes/linux-x64/native/libtbbbind_2_5_debug.so",
+        "runtimes/linux-x64/native/libtbbbind_debug.so",
+        "runtimes/linux-x64/native/libtbbmalloc.so",
+        "runtimes/linux-x64/native/libtbbmalloc_debug.so",
+        "runtimes/linux-x64/native/libtbbmalloc_proxy.so",
+        "runtimes/linux-x64/native/libtbbmalloc_proxy_debug.so"
+      ]
+    },
+    "MKL.NET.linux-x64.b/2022.0.1.117": {
+      "sha512": "Wu71xwKGHVjquBJDDwiewoLWmkqQBzdJu9XFID1LoDwRNeHy1i+kKtmKeGKki5M3WiTw619F084Eh+3Oo0b/8g==",
+      "type": "package",
+      "path": "mkl.net.linux-x64.b/2022.0.1.117",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "matrix.png",
+        "mkl.net.linux-x64.b.2022.0.1.117.nupkg.sha512",
+        "mkl.net.linux-x64.b.nuspec",
+        "runtimes/linux-x64/native/libmkl_avx.so.2",
+        "runtimes/linux-x64/native/libmkl_avx512.so.2",
+        "runtimes/linux-x64/native/libmkl_core.so.2",
+        "runtimes/linux-x64/native/libmkl_intel_thread.so.2",
+        "runtimes/linux-x64/native/libmkl_mc3.so.2"
+      ]
+    },
     "Mono.TextTemplating/3.0.0": {
       "sha512": "YqueG52R/Xej4VVbKuRIodjiAhV0HR/XVbLbNrJhCZnzjnSjgMJ/dCdV0akQQxavX6hp/LC6rqLGLcXeQYU7XA==",
       "type": "package",
@@ -7463,6 +7739,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "Appwrite >= 0.10.1",
+      "MKL.NET.linux-x64 >= 2022.0.1.117",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.0.11",
       "Microsoft.EntityFrameworkCore.Tools >= 9.0.0",
       "Microsoft.ML >= 4.0.1",
@@ -7527,6 +7804,10 @@
           "Appwrite": {
             "target": "Package",
             "version": "[0.10.1, )"
+          },
+          "MKL.NET.linux-x64": {
+            "target": "Package",
+            "version": "[2022.0.1.117, )"
           },
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
