@@ -19,6 +19,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import dayjs from 'dayjs';
+import { v4 as uuidv4 } from 'uuid';
 
 const ScrollStyled = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -77,7 +78,7 @@ export const Forecasting = () => {
 
   const addChart = () => {
     setCharts((prev) => [...prev, {
-      id: crypto.randomUUID(),
+      id: uuidv4(),
       name: 'Новый график',
       products: [],
       curves: []

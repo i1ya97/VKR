@@ -15,6 +15,7 @@ import { PluginOption } from '@shared/models/Plugin';
 import ColorPicker from '@shared/ui/ColorPicker';
 import { selectPluginsConfig, selectUser, setPluginsConfig } from '@features/common';
 import { AppWriteCollection, updateDocument } from '@shared/api';
+import { v4 as uuidv4 } from 'uuid';
 
 const ScrollStyled = styled('div')(({ theme }) => ({
   overflow: 'auto',
@@ -54,7 +55,7 @@ export const Plugins = () => {
   const addPlugins = () => {
     if (activeTab == 0) {
       setPlugins((prev) => [...prev, {
-        id: crypto.randomUUID(),
+        id: uuidv4(),
         key: 'new_plugin',
         url: 'http://example/plugins',
         items: [],
@@ -62,7 +63,7 @@ export const Plugins = () => {
       }]);
     } else {
       setPluginsTimeSeries((prev) => [...prev, {
-        id: crypto.randomUUID(),
+        id: uuidv4(),
         key: 'new_plugin',
         url: 'http://example/plugins',
         items: [],
@@ -74,14 +75,14 @@ export const Plugins = () => {
   const addKey = (index: number) => {
     if (activeTab == 0) {
       plugins[index].items.push({
-        id: crypto.randomUUID(),
+        id: uuidv4(),
         key: '',
         type: 'number',
       })
       setPlugins([...plugins]);
     } else {
       pluginsTimeSeries[index].items.push({
-        id: crypto.randomUUID(),
+        id: uuidv4(),
         key: '',
         type: '',
       })

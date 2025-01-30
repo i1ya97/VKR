@@ -11,6 +11,7 @@ import { allKeys } from '@widgets/ResidueControl/constants';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useAppSelector } from '@shared/hooks';
 import { selectPluginsConfig } from '@features/common';
+import { v4 as uuidv4 } from 'uuid';
 
 const ScrollStyled = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -69,7 +70,7 @@ export const SettingDialog = (props: Props) => {
 
   const addColumn = () => {
     setColumns([...columns, {
-      id: crypto.randomUUID(),
+      id: uuidv4(),
       label: '',
       width: 150,
       type: 'formula'
@@ -83,7 +84,7 @@ export const SettingDialog = (props: Props) => {
 
   const changeTypeColumn = (index: number, value: string) => {
     if (value === 'formula') {
-      columns[index] = { ...columns[index], type: value, id: crypto.randomUUID() };
+      columns[index] = { ...columns[index], type: value, id: uuidv4() };
     } else {
       const type = allKeys.find((k) => k.key === value)?.type;
       if(type) {
