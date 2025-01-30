@@ -1,5 +1,5 @@
 ﻿using API;
-using API.Entity;
+using Appwrite.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,14 +17,24 @@ public class LogsController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Log>>> GetLogs()
+    public async Task<ActionResult<IEnumerable<API.Entity.Log>>> GetLogs()
     {
-
-        if (_context.UploadLogs == null)
+        if (HttpContext.Items.TryGetValue("User", out var userObj) && userObj is User user)
         {
-            return NotFound();
+            if (_context.UploadLogs == null)
+            {
+                return NotFound();
+            }
+
+            var logs = await _context.UploadLogs
+                                         .Where(item => item.User_id == user.Id)
+                                         .ToListAsync();
+            return Ok(logs);
         }
-        return await _context.UploadLogs.ToListAsync();
+        else
+        {
+            return Unauthorized("User not found in context.");
+        }
     }
 
 }

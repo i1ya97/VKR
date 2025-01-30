@@ -285,7 +285,7 @@ export default function Table(props: Props) {
                         <MenuOpenIcon />
                       </IconButton>
                     )}
-                    <TextStyled sx={{ color: item.color }}>
+                    <TextStyled sx={{ color: item.color }} title={column.type === 'string' ? item.value : ''}>
                       {column.type !== 'string' ? numberWithSpaces(item.value) : item.value}
                       {item.value && column.type === 'percent' ? '%' : ''}
                     </TextStyled>

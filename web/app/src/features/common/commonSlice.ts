@@ -6,6 +6,8 @@ import { UserOptions } from './models/UserOptions';
 import { ApiCredentions } from './models/ApiCredentions';
 import { TableData } from './models/TableData';
 import dayjs from 'dayjs';
+import { DashboardChart } from './models/DashboardChart';
+import { PluginOption } from '@shared/models/Plugin';
 
 const initState: CommonState = {
   user: null,
@@ -14,6 +16,9 @@ const initState: CommonState = {
   ozonApiCredentions: null,
   dateStart: null,
   dateEnd: null,
+  dashboardDateStart: null,
+  dashboardDateEnd: null,
+  dashboardChart: { loading: false },
   uploadLogs: {
     loading: true,
     rows: [],
@@ -26,6 +31,11 @@ const initState: CommonState = {
     loading: true,
     rows: [],
   },
+  pluginsConfig: {
+    id: '',
+    plugins: [],
+    pluginsTimeSeries: [],
+  }
 };
 
 export const commonSlice = createSlice({
@@ -34,6 +44,10 @@ export const commonSlice = createSlice({
   reducers: {
     setUser: (state, { payload }: PayloadAction<Models.User<Models.Preferences> | null>) => {
       state.user = payload;
+      state.dateStart = dayjs.utc().add(-14, 'day').startOf('day');
+      state.dateEnd = dayjs.utc().startOf('day');
+      state.dashboardDateStart = dayjs.utc().add(-7, 'day').startOf('day');
+      state.dashboardDateEnd = dayjs.utc().startOf('day');
     },
     setTheme: (state, { payload }: PayloadAction<'dark' | 'light'>) => {
       state.theme.value = payload;
@@ -48,11 +62,27 @@ export const commonSlice = createSlice({
     setUploadLogs: (state, { payload }: PayloadAction<TableData>) => {
       state.uploadLogs = payload;
     },
-    setDateStart: (state, { payload }: PayloadAction<dayjs.Dayjs| null>) => {
+    setDateStart: (state, { payload }: PayloadAction<dayjs.Dayjs | null>) => {
       state.dateStart = payload;
     },
-    setDateEnd: (state, { payload }: PayloadAction<dayjs.Dayjs| null>) => {
+    setPluginsConfig: (state, { payload }: PayloadAction<{
+      id: string,
+      plugins: PluginOption[],
+      pluginsTimeSeries: PluginOption[],
+    }>) => {
+      state.pluginsConfig = payload;
+    },
+    setDashboardChart: (state, { payload }: PayloadAction<DashboardChart>) => {
+      state.dashboardChart = payload;
+    },
+    setDateEnd: (state, { payload }: PayloadAction<dayjs.Dayjs | null>) => {
       state.dateEnd = payload;
+    },
+    setDashboardDateStart: (state, { payload }: PayloadAction<dayjs.Dayjs | null>) => {
+      state.dashboardDateStart = payload;
+    },
+    setDashboardDateEnd: (state, { payload }: PayloadAction<dayjs.Dayjs | null>) => {
+      state.dashboardDateEnd = payload;
     },
     setArticles: (state, { payload }: PayloadAction<TableData>) => {
       state.articles = payload;
@@ -69,7 +99,7 @@ export const commonSlice = createSlice({
   },
 });
 
-export const { 
-  setUser, setTheme, setUserOptions, setOpenSideBar,setOzonApiCredentions, 
-  setUploadLogs, setArticles, setResidues, setDateStart, setDateEnd
+export const {
+  setUser, setTheme, setUserOptions, setOpenSideBar, setOzonApiCredentions, setDashboardChart, setPluginsConfig,
+  setUploadLogs, setArticles, setResidues, setDateStart, setDateEnd, setDashboardDateStart, setDashboardDateEnd
 } = commonSlice.actions;

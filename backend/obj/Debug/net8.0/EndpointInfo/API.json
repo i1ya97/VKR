@@ -148,6 +148,174 @@
           }
         }
       }
+    },
+    "/TimeSeries": {
+      "post": {
+        "tags": [
+          "TimeSeries"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TimeSeriesRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TimeSeriesRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TimeSeriesRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": {
+                          "$ref": "#/components/schemas/TimeSeries"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": {
+                          "$ref": "#/components/schemas/TimeSeries"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": {
+                          "$ref": "#/components/schemas/TimeSeries"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/TimeSeries/getPredictions": {
+      "post": {
+        "tags": [
+          "TimeSeries"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TimeSeriesRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TimeSeriesRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TimeSeriesRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": {
+                          "$ref": "#/components/schemas/TimeSeries"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": {
+                          "$ref": "#/components/schemas/TimeSeries"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": {
+                          "$ref": "#/components/schemas/TimeSeries"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -203,6 +371,7 @@
           "id",
           "name",
           "offer_id",
+          "sale_schema",
           "user_id"
         ],
         "type": "object",
@@ -255,6 +424,10 @@
             "type": "number",
             "format": "double"
           },
+          "sale_schema": {
+            "type": "string",
+            "nullable": true
+          },
           "vat": {
             "type": "number",
             "format": "double"
@@ -286,20 +459,97 @@
       },
       "Residue": {
         "required": [
+          "currency_code",
+          "deliveredUnits",
           "fbo",
           "fbs",
+          "id",
           "name",
           "offer_id",
           "ordered",
-          "returns"
+          "positionCategory",
+          "returns",
+          "revenue",
+          "sale_schema",
+          "user_id"
         ],
         "type": "object",
         "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
           "offer_id": {
             "type": "string",
             "nullable": true
           },
-          "name": {
+          "type_id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "old_price": {
+            "type": "number",
+            "format": "double"
+          },
+          "min_price": {
+            "type": "number",
+            "format": "double"
+          },
+          "price": {
+            "type": "number",
+            "format": "double"
+          },
+          "marketing_price": {
+            "type": "number",
+            "format": "double"
+          },
+          "currency_code": {
+            "type": "string",
+            "nullable": true
+          },
+          "delivery_amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "return_amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "sale_schema": {
+            "type": "string",
+            "nullable": true
+          },
+          "vat": {
+            "type": "number",
+            "format": "double"
+          },
+          "percent": {
+            "type": "number",
+            "format": "double"
+          },
+          "value": {
+            "type": "number",
+            "format": "double"
+          },
+          "volume_weight": {
+            "type": "number",
+            "format": "double"
+          },
+          "is_discounted": {
+            "type": "boolean"
+          },
+          "is_kgt": {
+            "type": "boolean"
+          },
+          "user_id": {
             "type": "string",
             "nullable": true
           },
@@ -318,6 +568,71 @@
           "returns": {
             "type": "integer",
             "format": "int32"
+          },
+          "revenue": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "deliveredUnits": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "positionCategory": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TimeSeries": {
+        "required": [
+          "key",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "value": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TimeSeriesRequest": {
+        "required": [
+          "curves",
+          "productIds"
+        ],
+        "type": "object",
+        "properties": {
+          "productIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "nullable": true
+          },
+          "curves": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "endDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
           }
         },
         "additionalProperties": false

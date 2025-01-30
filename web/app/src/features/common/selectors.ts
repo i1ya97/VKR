@@ -17,3 +17,11 @@ export const selectResidues = (state: RootState) => commonModule(state).residues
 export const selectDateStart = (state: RootState) => commonModule(state).dateStart;
 
 export const selectDateEnd = (state: RootState) => commonModule(state).dateEnd;
+
+export const selectDashboardDateStart = (state: RootState) => commonModule(state).dashboardDateStart;
+
+export const selectDashboardDateEnd = (state: RootState) => commonModule(state).dashboardDateEnd;
+
+export const selectDashboardChart = (state: RootState) => commonModule(state).dashboardChart;
+
+export const selectPluginsConfig = (state: RootState) => commonModule(state).pluginsConfig;

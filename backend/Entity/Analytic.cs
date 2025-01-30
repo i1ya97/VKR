@@ -5,10 +5,10 @@
         public required Guid Id { get; set; }
         public DateTime Date { get; set; }
 
-        public int Ordered_units { get; set; }
+        public int Value { get; set; }
 
-        public required int Returns { get; set; }
+        public required string Type { get; set; }
 
-        public required Product Sku { get; set; }
+        public required Product Offer { get; set; }
     }
 }

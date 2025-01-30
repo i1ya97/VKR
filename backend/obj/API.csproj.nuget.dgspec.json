@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ichusovlyanov\\Documents\\GitHub\\VKR\\backend\\API.csproj": {}
+    "C:\\Users\\ilya\\Documents\\GitHub\\VKR\\backend\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ichusovlyanov\\Documents\\GitHub\\VKR\\backend\\API.csproj": {
+    "C:\\Users\\ilya\\Documents\\GitHub\\VKR\\backend\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ichusovlyanov\\Documents\\GitHub\\VKR\\backend\\API.csproj",
+        "projectUniqueName": "C:\\Users\\ilya\\Documents\\GitHub\\VKR\\backend\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\ichusovlyanov\\Documents\\GitHub\\VKR\\backend\\API.csproj",
-        "packagesPath": "C:\\Users\\ichusovlyanov\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ichusovlyanov\\Documents\\GitHub\\VKR\\backend\\obj\\",
+        "projectPath": "C:\\Users\\ilya\\Documents\\GitHub\\VKR\\backend\\API.csproj",
+        "packagesPath": "C:\\Users\\ilya\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ilya\\Documents\\GitHub\\VKR\\backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ichusovlyanov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ilya\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -63,6 +63,14 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[9.0.0, )"
+            },
+            "Microsoft.ML": {
+              "target": "Package",
+              "version": "[4.0.1, )"
+            },
+            "Microsoft.ML.TimeSeries": {
+              "target": "Package",
+              "version": "[4.0.1, )"
             },
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",

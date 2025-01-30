@@ -25,6 +25,8 @@
 
         public double Return_amount { get; set; }
 
+        public required string Sale_schema { get; set; }
+
         public double Vat { get; set; }
 
         public double Percent { get; set; }

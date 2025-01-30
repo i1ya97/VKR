@@ -9,6 +9,8 @@
 
         public required string Type { get; set; }
 
-        public required Product Sku { get; set; }
+        public required Product Offer { get; set; }
+
+        public required int Sku { get; set; }
     }
 }

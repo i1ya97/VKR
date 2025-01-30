@@ -2,6 +2,8 @@ import InsightsIcon from '@mui/icons-material/Insights';
 import BookIcon from '@mui/icons-material/Book';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import ArticleIcon from '@mui/icons-material/Article';
+import TableChartIcon from '@mui/icons-material/TableChart';
+import ExtensionIcon from '@mui/icons-material/Extension';
 
 export const sideBarItems = [{
   name: 'Дашборд',
@@ -12,9 +14,17 @@ export const sideBarItems = [{
   path: '/articles',
   icon: <ArticleIcon />,
 }, {
-  name: 'Контроля остатков',
-  path: '/residue-control',
+  name: 'Анализ данных',
+  path: '/data-analysis',
+  icon: <TableChartIcon />,
+}, {
+  name: 'Работа с прогнозом',
+  path: '/forecasting',
   icon: <InsightsIcon />,
+}, {
+  name: 'Плагины',
+  path: '/plugins',
+  icon: <ExtensionIcon />,
 }, {
   name: 'Журнал выгрузки',
   path: '/unloading-logs',

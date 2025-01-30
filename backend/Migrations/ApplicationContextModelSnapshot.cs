@@ -31,18 +31,19 @@ namespace API.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<int>("Ordered_units")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("Returns")
-                        .HasColumnType("integer");
-
-                    b.Property<long>("SkuId")
+                    b.Property<long>("OfferId")
                         .HasColumnType("bigint");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("Value")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("SkuId");
+                    b.HasIndex("OfferId");
 
                     b.ToTable("Analytics");
                 });
@@ -162,14 +163,17 @@ namespace API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
+                    b.Property<long>("OfferId")
+                        .HasColumnType("bigint");
+
                     b.Property<int>("Present")
                         .HasColumnType("integer");
 
                     b.Property<int>("Reserved")
                         .HasColumnType("integer");
 
-                    b.Property<long>("SkuId")
-                        .HasColumnType("bigint");
+                    b.Property<int>("Sku")
+                        .HasColumnType("integer");
 
                     b.Property<string>("Type")
                         .IsRequired()
@@ -177,31 +181,31 @@ namespace API.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("SkuId");
+                    b.HasIndex("OfferId");
 
                     b.ToTable("Stoks");
                 });
 
             modelBuilder.Entity("API.Entity.Analytic", b =>
                 {
-                    b.HasOne("API.Entity.Product", "Sku")
+                    b.HasOne("API.Entity.Product", "Offer")
                         .WithMany()
-                        .HasForeignKey("SkuId")
+                        .HasForeignKey("OfferId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Sku");
+                    b.Navigation("Offer");
                 });
 
             modelBuilder.Entity("API.Entity.Stock", b =>
                 {
-                    b.HasOne("API.Entity.Product", "Sku")
+                    b.HasOne("API.Entity.Product", "Offer")
                         .WithMany()
-                        .HasForeignKey("SkuId")
+                        .HasForeignKey("OfferId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Sku");
+                    b.Navigation("Offer");
                 });
 #pragma warning restore 612, 618
         }

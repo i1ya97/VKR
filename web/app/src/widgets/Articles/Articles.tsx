@@ -2,7 +2,7 @@ import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import Table from '@shared/ui/Table';
-import { columns } from './constants';
+import { columns, fixedColumns } from './constants';
 import { Button, CircularProgress } from '@mui/material';
 import { useAppDispatch, useAppSelector } from '@shared/hooks';
 import { useEffect } from 'react';
@@ -30,13 +30,16 @@ export const Articles = () => {
   };
 
   const updateArticles = () => {
-    from(request<Record<string, string>[]>(ApiMethods.POST, `/api`, `/Products/add-products`)).subscribe(() => {
+    from(request<Record<string, string>[]>(ApiMethods.POST, `/api`, `/TimeSeries/getPredictions`, {
+      productIds: ['9'],
+      curves: ['ordered_units']
+    })).subscribe(() => {
       dispatch(fetchArticles());
     });
   };
 
   return (
-    <Box sx={{ margin: '24px', gap: '16px', display: 'flex', flexDirection: 'column', height: '100%' }}>
+    <Box sx={{ margin: '24px', gap: '16px', display: 'flex', flexDirection: 'column', height: 'calc(100% - 48px)' }}>
       <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
         <Typography variant="h4">Артикулы</Typography>
         <Button variant="contained" size="small" onClick={updateArticles}>
@@ -50,6 +53,7 @@ export const Articles = () => {
         </Box>
       ) : !!articles.rows.length ? (
         <Table
+          fixedColumns={fixedColumns}
           rows={articles.rows}
           rowSize={50}
           columns={columns}

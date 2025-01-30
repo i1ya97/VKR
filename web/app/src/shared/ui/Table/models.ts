@@ -4,8 +4,11 @@ export interface TableColumn {
   width?: number;
   align?: string;
   options?: { name: string; key: string }[];
-  type?: 'percent' | 'number' | 'string' | 'date';
+  type?: 'percent' | 'number' | 'string' | 'date' | 'formula' | 'boolean';
   children?: TableColumn[];
+  formula?: string;
+  min?: number;
+  max?: number;
 }
 
 export interface TableRow {

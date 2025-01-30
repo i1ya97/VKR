@@ -1,26 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ichusovlyanov\\Documents\\GitHub\\VKR\\backend\\",
+  "WorkspaceRootPath": "C:\\Users\\ilya\\Documents\\GitHub\\VKR\\backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|c:\\users\\ichusovlyanov\\documents\\github\\vkr\\backend\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|solutionrelative:controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|c:\\users\\ichusovlyanov\\documents\\github\\vkr\\backend\\controllers\\residuescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|solutionrelative:controllers\\residuescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|c:\\users\\ichusovlyanov\\documents\\github\\vkr\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|c:\\users\\ichusovlyanov\\documents\\github\\vkr\\backend\\entity\\stock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|solutionrelative:entity\\stock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|c:\\users\\ichusovlyanov\\documents\\github\\vkr\\backend\\entity\\residue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|solutionrelative:entity\\residue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|c:\\users\\ilya\\documents\\github\\vkr\\backend\\controllers\\timeseriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE6A7CFE-6909-41AA-9965-C55993EB5828}|API.csproj|solutionrelative:controllers\\timeseriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,71 +14,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ResiduesController.cs",
-              "DocumentMoniker": "C:\\Users\\ichusovlyanov\\Documents\\GitHub\\VKR\\backend\\Controllers\\ResiduesController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ResiduesController.cs",
-              "ToolTip": "C:\\Users\\ichusovlyanov\\Documents\\GitHub\\VKR\\backend\\Controllers\\ResiduesController.cs",
-              "RelativeToolTip": "Controllers\\ResiduesController.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAuwEEAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-14T11:59:46.543Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\ichusovlyanov\\Documents\\GitHub\\VKR\\backend\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\ichusovlyanov\\Documents\\GitHub\\VKR\\backend\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAADgAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-14T10:45:11.016Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Stock.cs",
-              "DocumentMoniker": "C:\\Users\\ichusovlyanov\\Documents\\GitHub\\VKR\\backend\\Entity\\Stock.cs",
-              "RelativeDocumentMoniker": "Entity\\Stock.cs",
-              "ToolTip": "C:\\Users\\ichusovlyanov\\Documents\\GitHub\\VKR\\backend\\Entity\\Stock.cs",
-              "RelativeToolTip": "Entity\\Stock.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-14T10:42:45.83Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Residue.cs",
-              "DocumentMoniker": "C:\\Users\\ichusovlyanov\\Documents\\GitHub\\VKR\\backend\\Entity\\Residue.cs",
-              "RelativeDocumentMoniker": "Entity\\Residue.cs",
-              "ToolTip": "C:\\Users\\ichusovlyanov\\Documents\\GitHub\\VKR\\backend\\Entity\\Residue.cs",
-              "RelativeToolTip": "Entity\\Residue.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-14T10:42:37.567Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ProductsController.cs",
-              "DocumentMoniker": "C:\\Users\\ichusovlyanov\\Documents\\GitHub\\VKR\\backend\\Controllers\\ProductsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ProductsController.cs",
-              "ToolTip": "C:\\Users\\ichusovlyanov\\Documents\\GitHub\\VKR\\backend\\Controllers\\ProductsController.cs",
-              "RelativeToolTip": "Controllers\\ProductsController.cs",
-              "ViewState": "AgIAACMBAAAAAAAAAAAwwDMBAABaAAAAAAAAAA==",
+              "Title": "TimeSeriesController.cs",
+              "DocumentMoniker": "C:\\Users\\ilya\\Documents\\GitHub\\VKR\\backend\\Controllers\\TimeSeriesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TimeSeriesController.cs",
+              "ToolTip": "C:\\Users\\ilya\\Documents\\GitHub\\VKR\\backend\\Controllers\\TimeSeriesController.cs",
+              "RelativeToolTip": "Controllers\\TimeSeriesController.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-12T15:35:16.661Z",
+              "WhenOpened": "2025-01-30T09:47:39.719Z",
               "EditorCaption": ""
             }
           ]
