@@ -16,6 +16,7 @@ import ColorPicker from '@shared/ui/ColorPicker';
 import { selectPluginsConfig, selectUser, setPluginsConfig } from '@features/common';
 import { AppWriteCollection, updateDocument } from '@shared/api';
 import { v4 as uuidv4 } from 'uuid';
+import cloneDeep from 'lodash.clonedeep';
 
 const ScrollStyled = styled('div')(({ theme }) => ({
   overflow: 'auto',
@@ -44,8 +45,8 @@ export const Plugins = () => {
   const [pluginsTimeSeries, setPluginsTimeSeries] = useState<PluginOption[]>([]);
 
   useEffect(() => {
-    setPlugins(pluginsConfig.plugins);
-    setPluginsTimeSeries(pluginsConfig.pluginsTimeSeries);
+    setPlugins(cloneDeep(pluginsConfig.plugins));
+    setPluginsTimeSeries(cloneDeep(pluginsConfig.pluginsTimeSeries));
   }, [pluginsConfig])
 
   const handleChangeTab = (_: React.SyntheticEvent, newValue: number) => {
